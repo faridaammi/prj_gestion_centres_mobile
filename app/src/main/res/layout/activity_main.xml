@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     android:background="#ECECEC"
     tools:context=".MainActivity">
-
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/IdContainer"
+       android:layout_above="@id/bottom_menu"/>
    <com.google.android.material.bottomnavigation.BottomNavigationView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:id="@+id/bottom_menu"
        android:layout_alignParentBottom="true"
-       android:background="#FFFFFF"
+       android:background="#FFFF"
        app:menu="@menu/menu_item"
-       app:itemRippleColor="@color/white">
+       app:itemRippleColor="@color/blue_mobile">
+
    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
