@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">prj_gestion_centre_mobile</string>
+    <string name="le_lorem_ipsum_est_simplement_du_faux_texte_employ_dans_la_composition_et_la_mise_en_page_avant_impression_le_lorem_ipsum_est_le_faux_texte_standard_de_l_imprimerie_depuis_les_ann_es_1500_quand_un_imprimeur_anonyme_assembla_ensemble_des_morceaux_de_texte_pour_r_aliser_un_livre_sp_cimen_de_polices_de_texte_il_n_a_pas_fait_que_survivre_cinq_si_cles_mais_s_est_lire_plus">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l\'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n\'a pas fait que survivre cinq siècles, mais s\'est Lire plus...</string>
+
+
+    <string-array name="imgs">
+        <item>@drawable/img_centre</item>
+        <item>@drawable/img_centre2</item>
+        <item>@drawable/img_pub2</item>
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
