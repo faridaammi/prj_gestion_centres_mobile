@@ -79,8 +79,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_margin="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
                 android:text="Description"
+                android:layout_marginLeft="15dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -94,6 +96,46 @@
                 android:fontFamily="@font/poppins_light"
                 android:textColor="@color/black"
                 android:textSize="11dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                android:text="Localisation"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/gpscordone"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:text="Commentaire"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleviewcmnts"
                 />
 
 

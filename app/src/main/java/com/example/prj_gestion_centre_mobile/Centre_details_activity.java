@@ -13,9 +13,10 @@ import java.util.Arrays;
 import Controller.Centre_detailsController;
 import Controller.Salle_Controller;
 import Model.Salle;
+import Model.Utilisateur;
 
 public class Centre_details_activity extends AppCompatActivity {
-
+public static ArrayList<Utilisateur> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
