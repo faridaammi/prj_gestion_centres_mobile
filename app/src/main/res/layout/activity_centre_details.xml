@@ -75,6 +75,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scrollbars="horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_margin="15dp"
+                android:text="Description"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="@string/le_lorem_ipsum_est_simplement_du_faux_texte_employ_dans_la_composition_et_la_mise_en_page_avant_impression_le_lorem_ipsum_est_le_faux_texte_standard_de_l_imprimerie_depuis_les_ann_es_1500_quand_un_imprimeur_anonyme_assembla_ensemble_des_morceaux_de_texte_pour_r_aliser_un_livre_sp_cimen_de_polices_de_texte_il_n_a_pas_fait_que_survivre_cinq_si_cles_mais_s_est_lire_plus"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                />
+
 
         </LinearLayout>
     </ScrollView>
