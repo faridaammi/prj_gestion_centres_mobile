@@ -47,4 +47,8 @@ public class Salle {
         this.image_salle = image_salle;
     }
     public  Salle(){}
+    public  Salle(int capacite , String numero_salle){
+        this.capacite_salle= capacite;
+        this.numero_salle= numero_salle;
+    }
 }
