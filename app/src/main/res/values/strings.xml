@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">prj_gestion_centre_mobile</string>
+    <string-array name="imgs">
+        <item>@drawable/img_centre</item>
+        <item>@drawable/img_centre2</item>
+        <item>@drawable/img_pub2</item>
+
+    </string-array>
 </resources>
