@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Commentaire {
     private int id_cmnt;
-    private Date date_cmnt;
+    private String date_cmnt;
     private String contenu_cmnt;
     private  int id_utilisateur;
 
@@ -16,11 +16,11 @@ public class Commentaire {
         this.id_cmnt = id_cmnt;
     }
 
-    public Date getDate_cmnt() {
+    public String getDate_cmnt() {
         return date_cmnt;
     }
 
-    public void setDate_cmnt(Date date_cmnt) {
+    public void setDate_cmnt(String date_cmnt) {
         this.date_cmnt = date_cmnt;
     }
 
@@ -40,7 +40,7 @@ public class Commentaire {
         this.id_utilisateur = id_utilisateur;
     }
 
-    public Commentaire(int id_cmnt, Date date_cmnt, String contenu_cmnt, int id_utilisateur) {
+    public Commentaire(int id_cmnt, String date_cmnt, String contenu_cmnt, int id_utilisateur) {
         this.id_cmnt = id_cmnt;
         this.date_cmnt = date_cmnt;
         this.contenu_cmnt = contenu_cmnt;

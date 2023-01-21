@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/cardview_light_background"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgprofile"
+            android:layout_width="64dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="64dp"
+            android:src="@drawable/icon_profile"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nom_user"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="18dp"
+                android:text="ASSOCIATION USAT"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date_cmnt"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="ASSOCIATION USAT"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="12dp"
+                />
+
+        </LinearLayout>
+
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contenu_cmnt"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="Centre très agréable et confortable, merci d'avoir accompagné mon exposant"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="12dp"
+        />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+

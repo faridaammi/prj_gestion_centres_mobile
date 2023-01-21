@@ -1,5 +1,8 @@
 package Model;
 
+import com.example.prj_gestion_centre_mobile.Centre_details_activity;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Utilisateur {
@@ -127,6 +130,12 @@ public class Utilisateur {
         this.IP_utilisateur = IP_utilisateur;
         this.token = token;
     }
+    public Utilisateur (int id_utilisateur,String nom_utilisateur,int img_utilisateur){
+        this.id_utilisateur = id_utilisateur;
+        this.nom_utilisateur = nom_utilisateur;
+        this.img_utilisateur=img_utilisateur;
+
+    }
 
     @Override
     public String toString() {
@@ -143,5 +152,15 @@ public class Utilisateur {
                 ", IP_utilisateur=" + IP_utilisateur +
                 ", token=" + token +
                 '}';
+    }
+    public static Utilisateur finduser(int id){
+        Utilisateur utilisateur = null;
+        for(Utilisateur user : Centre_details_activity.list){
+            if (user.getId_utilisateur()==id){
+                utilisateur= user;
+                break;
+            }
+        }
+        return utilisateur;
     }
 }
