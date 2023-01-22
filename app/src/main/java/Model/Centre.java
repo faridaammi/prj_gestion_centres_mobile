@@ -7,6 +7,8 @@ public class Centre {
     private String nom_centre;
     private String adresse_centre;
     private String descriptioncentre;
+    private Boolean favoris_centre;
+    private int img_centre;
     private ArrayList<Integer> imgs_centre;
     private ArrayList<Salle> salles_centre;
 
@@ -37,6 +39,9 @@ public class Centre {
     public String getDescriptioncentre() {
         return descriptioncentre;
     }
+    public Boolean getFavoris_centre() { return favoris_centre; }
+
+    public void setFavoris_centre(Boolean favoris_centre) { this.favoris_centre = favoris_centre; }
 
     public ArrayList<Salle> getSalles_centre() {
         return salles_centre;
@@ -58,12 +63,24 @@ public class Centre {
         this.imgs_centre = imgs_centre;
     }
 
+    public int getImg_centre() {
+        return img_centre;
+    }
+
+    public void setImg_centre(int img_centre) {
+        this.img_centre = img_centre;
+    }
     public Centre(int id_centre, String nom_centre, String adresse_centre, String descriptioncentre, ArrayList<Integer> imgs_centre) {
         this.id_centre = id_centre;
         this.nom_centre = nom_centre;
         this.adresse_centre = adresse_centre;
         this.descriptioncentre = descriptioncentre;
         this.imgs_centre = imgs_centre;
+    }
+    //pour les centres favoris:
+    public Centre(String nom_centre,int img_centre) {
+        this.nom_centre = nom_centre;
+        this.img_centre = img_centre;
     }
     public Centre(){  }
 }
