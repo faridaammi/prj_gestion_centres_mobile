@@ -18,6 +18,7 @@ public class AccueilActivity extends AppCompatActivity {
 
     AccueilFragment accueilFragment;
     CentreFragment centreFragment;
+    FavorisFragment favorisFragment;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class AccueilActivity extends AppCompatActivity {
         bottom_menu=findViewById(R.id.bottom_menu);
         accueilFragment=new AccueilFragment();
         centreFragment=new CentreFragment();
+        favorisFragment=new FavorisFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,accueilFragment).commit();
         bottom_menu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -35,6 +37,9 @@ public class AccueilActivity extends AppCompatActivity {
                         return true;
                     case R.id.centreId:
                         getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,centreFragment).commit();
+                        return true;
+                    case R.id.settingId:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,favorisFragment).commit();
                         return true;
                 }
                 return false;

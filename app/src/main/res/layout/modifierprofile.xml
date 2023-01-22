@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modfier Profile" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="98dp"
+                android:src="@drawable/img" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="none"
+                android:drawableStart="@drawable/profile"
+                android:drawablePadding="12dp"
+                android:hint="AssociationUSAT"
+                 />
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
+    android:hint="@string/select"
+
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+    >
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/menu"
+        android:drawablePadding="12dp"
+
+        android:inputType="none"
+        />
+</com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/editTextDate3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/icon_reservation_black"
+                android:drawablePadding="12dp"
+                android:hint="1990-08-01"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/custom_email_icon"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="associationusat@gmail.com"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/editTextPhone2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/maroc"
+                android:drawablePadding="12dp"
+                android:hint="+212 6 53 29 81 13"
+                android:inputType="phone" />
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/fingerprint"
+                android:drawablePadding="12dp"
+                android:inputType="textPersonName"
+                android:hint="SAU875421" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:drawableStart="@drawable/personne"
+                android:drawablePadding="12dp"
+                android:inputType="textPersonName"
+                android:hint="MOHAMMED MADIH"
+                />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catégories" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

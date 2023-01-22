@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".listeView_etats">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En cours"
+                android:textColor="#5669FF"
+                android:background="@drawable/btn_liste"
+                android:id="@+id/btn_en_cours"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete"
+                android:textColor="#5669FF"
+                android:background="@drawable/btn_liste"
+                android:id="@+id/btn_complet"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Annule"
+                android:background="@drawable/btn_liste"
+                android:textColor="#5669FF"
+                android:id="@+id/btn_annule"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_en_cours"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</RelativeLayout>
