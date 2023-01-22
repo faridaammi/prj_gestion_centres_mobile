@@ -1,9 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".modpass_Verification">
+    <?xml version="1.0" encoding="utf-8"?>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mot de passe oublié"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            />
+        <TextView
+android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="code a été envoyé au +212 6 53*******13"
+            android:textColor="#120D26"
+            android:paddingLeft="35dp"
+            android:layout_marginTop="200dp"
+            android:textSize="19dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_marginRight="20dp"
+                android:background="@drawable/butto_cood"
+                android:layout_width="55dp"
+                android:hint="..."
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_height="55dp"/>
+            <EditText android:layout_marginRight="20dp"
+                android:background="@drawable/butto_cood"
+                android:layout_width="55dp"
+                android:hint="..."
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_height="55dp"/>
+
+            <EditText
+                android:layout_marginRight="20dp"
+                android:layout_width="55dp"
+                android:hint="..."
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_height="55dp"
+                android:background="@drawable/butto_cood" />
+            <EditText
+                android:layout_marginRight="20dp"
+                android:background="@drawable/butto_cood"
+                android:layout_width="55dp"
+                android:hint="..."
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_height="55dp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/but_oncontinu"
+            android:layout_width="271dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="450dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button"
+            android:text="         continue"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:drawableRight="@drawable/icon_contunue"
+            android:paddingRight="15dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginTop="540dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Renvoyer le code en"/>
+            <TextView
+                android:textSize="20dp"
+                android:layout_marginTop="540dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:textColor="#5669FF"
+                android:text="0:20"/>
+        </LinearLayout>
+
+    </RelativeLayout>
