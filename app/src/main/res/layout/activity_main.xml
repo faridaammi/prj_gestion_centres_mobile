@@ -16,9 +16,11 @@
        android:layout_height="wrap_content"
        android:id="@+id/bottom_menu"
        android:layout_alignParentBottom="true"
+       app:itemTextColor="@color/blue_mobile"
        android:background="#FFFF"
        app:menu="@menu/menu_item"
-       app:itemRippleColor="@color/blue_mobile">
+       app:itemRippleColor="@color/icon_color"
+       app:itemIconTint="@color/icons_color">
 
    </com.google.android.material.bottomnavigation.BottomNavigationView>
 

@@ -6,7 +6,21 @@
     android:layout_height="match_parent"
     android:padding="40dp"
     tools:context=".SignIn">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:ems="10"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="S'identifier"
+        android:textColor="#120D26"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <EditText
         android:id="@+id/IdEmail"
         android:layout_width="match_parent"
@@ -44,4 +58,80 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/IdEmail"/>
+    <Switch
+        android:id="@+id/SwitchRappelles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="me rappelles"
+        android:textColor="#120D26"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IdPassword"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="Mot de passe Oublié?"
+        android:textColor="#120D26"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IdPassword"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sidentifier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="S’identifier?"
+        android:background="@drawable/button_person"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SwitchRappelles"/>
+    <TextView
+        android:id="@+id/txt_pas_compte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="Vous n'avez pas de compte ?"
+        android:textColor="#120D26"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_sidentifier"/>
+    <TextView
+        android:id="@+id/txt_Sinscrire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="S’inscrire"
+        android:textColorLink="@color/blue_mobile"
+        android:textColor="#5669FF"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_sidentifier" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
