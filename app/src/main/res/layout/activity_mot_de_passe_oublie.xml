@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mot_de_passe_oublie">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="sélectionnez les coordonnées que nous devrions utiliser pour réinitialiser votre mot de passe."
+        android:textColor="#000000"
+        android:paddingLeft="35dp"
+        android:layout_marginTop="250dp"
+        android:textSize="19dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mot de passe oublié"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:paddingTop="100dp"
+        android:src="@drawable/image_mot_de_passe" />
+
+    <EditText
+        android:id="@+id/sms"
+        android:layout_width="269dp"
+        android:layout_height="74dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="340dp"
+        android:inputType="phone"
+        android:textSize="14sp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/icon_sms"
+        android:hint="via sms" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="269dp"
+        android:layout_height="74dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_text"
+        android:layout_marginTop="430dp"
+        android:textSize="14sp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:inputType="textEmailAddress"
+        android:drawableLeft="@drawable/icon_email"
+        android:hint="via email" />
+    <Button
+        android:id="@+id/but_oncontinu"
+        android:layout_width="271dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="540dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:text="         continue"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:drawableRight="@drawable/icon_contunue"
+        android:paddingRight="15dp"/>
+
+</RelativeLayout>

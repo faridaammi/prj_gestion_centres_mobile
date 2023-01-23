@@ -29,10 +29,13 @@ public static ArrayList<Utilisateur> list;
                 new Utilisateur(2,"Doon Kaiji",R.drawable.icon_profile2),new Utilisateur(3,"GUITAR TIZ ASSO",R.drawable.icon_profile)));
 
         ArrayList<Commentaire> listcmnts = new ArrayList<>(Arrays.asList(new Commentaire(1,"Nov 25,2022",cmnt,1),
-                new Commentaire(2,"Oct 10,2021",cmnt,2),new Commentaire(1,"Dec 11,2022",cmnt,3)));
+                new Commentaire(2,"Oct 10,2021",cmnt,2),new Commentaire(1,"Dec 11,2022",cmnt,3),new Commentaire(2,"Oct 10,2021",cmnt,2)));
         ArrayList<Salle> listsalle= new ArrayList<Salle>(
                 Arrays.asList(new Salle(149,"14"),new Salle(30,"4"),
-                       new Salle(230,"12"),new Salle(50,"6") ));
+                       new Salle(230,"12"),new Salle(50,"6"),
+                        new Salle(28,"45")));
+        listsalle.get(3).setImage_salle(R.drawable.img_salle2);
+        listsalle.get(0).setImage_salle(R.drawable.img_salle);
         int[] imglist = {R.drawable.img_centre,R.drawable.img_centre2,R.drawable.img_centre3};
         Centre_detailsController controller = new Centre_detailsController(this,imglist);
         Salle_Controller salleController = new Salle_Controller(this,listsalle);
