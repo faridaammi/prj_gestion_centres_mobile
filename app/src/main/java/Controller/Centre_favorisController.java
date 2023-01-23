@@ -1,10 +1,12 @@
 package Controller;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,16 +36,23 @@ public class Centre_favorisController extends RecyclerView.Adapter<Centre_favori
     @Override
     public void onBindViewHolder(@NonNull Centre_favorisController.ViewHolder holder, int position) {
         Centre item=centreList.get(position);
-        holder.imgv_favCentre.setImageResource(item.getImg_centre());
+
+        holder.imgv_favCentre.setBackground(context.getDrawable(item.getImg_centre()));
         holder.txt_favTitre.setText(item.getNom_centre());
-//        holder.txt_nbSalle.setText(item.getSalles_centre().size());
+        if (item.getSalles_centre()!=null){
+            Log.d("ffdfd","dsdsd");
+            String size = String.valueOf(item.getSalles_centre().size());
+            holder.txt_nbSalle.setText(size);
+        }
+
+
     }
 
     @Override
     public int getItemCount() { return centreList.size();}
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private ImageView imgv_favCentre;
+        private LinearLayout imgv_favCentre;
         private TextView txt_favTitre;
         private TextView txt_nbSalle;
 
@@ -52,7 +61,7 @@ public class Centre_favorisController extends RecyclerView.Adapter<Centre_favori
             itemView.setOnClickListener(this);
             imgv_favCentre=itemView.findViewById(R.id.imgv_favCentre);
             txt_favTitre=itemView.findViewById(R.id.txt_favTitre);
-            //txt_nbSalle=itemView.findViewById(R.id.txt_nbSalle);
+            txt_nbSalle=itemView.findViewById(R.id.txt_nbSalle);
         }
 
         @Override

@@ -3,19 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="200dp"
     android:layout_height="wrap_content"
-    android:layout_margin="6dp"
+    android:layout_margin="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="146.08dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="130.89dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:id="@+id/imgv_favCentre"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_centre"/>
 
-        <ImageView
-            android:id="@+id/imgv_favCentre"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            tools:srcCompat="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/txt_favTitre"
@@ -36,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/txt_nbSalle"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginLeft="18dp"
@@ -60,7 +70,7 @@
                 android:id="@+id/img_bookmark"
                 android:layout_width="26dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="100sp"
+                android:layout_marginLeft="80sp"
                 android:src="@drawable/icon_bookmark"
                 tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
