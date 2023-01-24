@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context=".Reinitialisermotdepass_Activity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="22dp"
+        android:layout_marginTop="30dp"
+        android:text="Réinitialiser le mot de passe"
+        android:textColor="#120D26"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="15dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="15dp"
+        android:text="Veuillez entrer votre adresse e-mail pour demander une réinitialisation du mot de passe"
+        android:textColor="#120D26"/>
+    <EditText
+        android:id="@+id/IdEmail_renitioalitaion"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:ems="10"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/custmor_input"
+        android:drawableStart="@drawable/custom_email_icon"
+        android:drawablePadding="12dp"
+        android:hint="abc@gmail.com"
+        android:inputType="text"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+       />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sidentifier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingRight="12dp"
+        android:paddingLeft="25dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginLeft="15dp"
+        android:text="ENVOYER"
+        android:drawableEnd="@drawable/icon_nextblue"
+        android:background="@drawable/button_person"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+      />
+
+
+
+
+
+</LinearLayout>
