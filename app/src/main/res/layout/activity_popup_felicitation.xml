@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="269dp"
+    android:layout_height="330dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="31dp"
+    app:cardElevation="@dimen/cardview_compat_inset_shadow"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="114.88dp"
+            android:layout_height="114.88dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/vector" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#06D6A0"
+            android:text="Félicitation!"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#707271"
+            android:text="votre compte est prêt à utiliser"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_felicitation"
+            android:drawableEnd="@drawable/next"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="aller à la page d'accueil"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
