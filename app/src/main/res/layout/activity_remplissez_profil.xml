@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".remplissez_profil"
-    android:padding="40dp">
+    tools:context=".remplissez_profil">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="40dp">
+
     <ImageButton
         android:id="@+id/IdIcon_back"
         android:layout_width="36dp"
@@ -16,11 +25,10 @@
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -34,25 +42,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:circularflow_defaultRadius="@dimen/cardview_default_radius"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="16dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:ems="10"
-        android:drawablePadding="12dp"
-        android:src="@drawable/ic_users"
-        android:background="@color/icon_color"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/icon_profile2"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/icon_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <EditText
-        android:id="@+id/IdNum_organisme"
+        android:id="@+id/nom_organisme"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="210dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:ems="10"
@@ -67,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <EditText
-        android:id="@+id/IdEmail_inscrire"
+        android:id="@+id/IdEmail_organisme"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -83,9 +87,40 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IdNum_organisme"/>
+        app:layout_constraintTop_toBottomOf="@+id/nom_organisme"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/type_organisme"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:textSize="14sp"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/IdEmail_organisme">
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:ems="10"
+                android:drawablePadding="12dp"
+                android:id="@+id/typeOrganisme"
+                android:inputType="none"
+                android:background="@drawable/custmor_input"
+                android:text="Type Association"
+                android:drawableStart="@drawable/custom_spinner"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
     <EditText
-        android:id="@+id/IdPassword"
+        android:id="@+id/date_creation"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -93,18 +128,18 @@
         android:paddingEnd="12dp"
         android:ems="10"
         android:background="@drawable/custmor_input"
-        android:drawableStart="@drawable/ic_calendar"
+        android:drawableStart="@drawable/custom_date"
         android:drawablePadding="12dp"
         android:hint="Date Creation"
         android:fontFamily="@font/poppins_regular"
-        android:inputType="textPassword"
+        android:inputType="date"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/IdEmail_inscrire"/>
+        app:layout_constraintTop_toBottomOf="@id/type_organisme"/>
     <EditText
-        android:id="@+id/IdPassword_confirmer"
+        android:id="@+id/Numero_tele"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -112,16 +147,16 @@
         android:paddingEnd="12dp"
         android:ems="10"
         android:background="@drawable/custmor_input"
-        android:drawableStart="@drawable/custom_password_icon"
+        android:drawableStart="@drawable/custom_phone"
         android:drawablePadding="12dp"
         android:hint="+2126 53 29 81 13"
         android:fontFamily="@font/poppins_regular"
-        android:inputType="textPassword"
+        android:inputType="phone"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/IdPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/date_creation"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sidentifier"
         android:layout_width="match_parent"
@@ -137,6 +172,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/IdPassword_confirmer"/>
+        app:layout_constraintTop_toBottomOf="@id/Numero_tele"/>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
