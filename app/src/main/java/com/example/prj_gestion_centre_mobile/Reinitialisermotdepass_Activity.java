@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class listeView_etats extends AppCompatActivity {
+public class Reinitialisermotdepass_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_view_etats);
+        setContentView(R.layout.activity_reinitialisermotdepass);
     }
 }
