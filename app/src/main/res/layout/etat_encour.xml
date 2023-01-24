@@ -99,7 +99,7 @@ TIZNIT"
             android:layout_height="33dp"
             android:layout_marginLeft="20dp"
             android:text="Voir les details"
-            android:background="@drawable/btn_detailll"
+            android:background="@drawable/btn_detaill"
             android:textColor="#FFFF"
             />
     </LinearLayout>
