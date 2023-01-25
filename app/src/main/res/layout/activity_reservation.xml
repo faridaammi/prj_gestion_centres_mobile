@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    tools:context=".ReservationActivity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="24dp"
+                android:layout_marginTop="30dp"
+                android:text="Sélectionner la date"
+                android:textColor="#120D26"/>
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/calendarbackground"
+                android:dateTextAppearance="@style/CalendarWidgetHeader"
+                android:theme="@style/CalenderViewCustom"
+                android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="14dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Date enregistrer"
+                    android:textColor="#120D26"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Date Fin"
+                    android:textColor="#120D26"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txt_datedepart"
+                    android:layout_width="136dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="14dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:drawableEnd="@drawable/calendar"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/textview_background"
+                    android:layout_marginTop="15dp"
+                    android:text="Dec 16        "
+                    android:paddingLeft="8dp"
+                    android:textColor="#120D26"/>
+                <TextView
+                    android:id="@+id/txt_datefin"
+                    android:layout_width="136dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center_vertical"
+                    android:drawableEnd="@drawable/calendar"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/textview_background"
+                    android:layout_marginTop="15dp"
+                    android:text="Dec 16        "
+                    android:paddingLeft="8dp"
+                    android:textColor="#120D26"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18dp"
+                android:layout_marginTop="15dp"
+                android:text="Invité"
+                android:textColor="#120D26"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+</LinearLayout>
