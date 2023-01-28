@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_mobile">#5669FF</color>
     <color name="icon_color">#CCCCCC</color>
+    <color name="grey_line">#909090</color>
 </resources>
