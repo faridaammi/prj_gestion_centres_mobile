@@ -101,6 +101,54 @@
                 android:layout_marginTop="15dp"
                 android:text="Invité"
                 android:textColor="#120D26"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_background3">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btndeleteinvite"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:paddingStart="8dp"
+                    android:onClick="deleteinvite"
+                    android:background="@drawable/button_backgraound2"
+                    android:drawableStart="@drawable/moins"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:textSize="40dp"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/txt_invite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="100dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="0"
+                    android:textColor="#5669FF"
+                    android:textSize="40dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnaddinvite"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingStart="8dp"
+                    android:onClick="addinvite"
+                    android:background="@drawable/button_backgraound2"
+                    android:drawableStart="@drawable/plus"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:textSize="40dp"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+
 
 
 
