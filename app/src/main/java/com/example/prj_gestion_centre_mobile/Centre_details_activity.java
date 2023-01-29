@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,12 +17,15 @@ import java.util.Date;
 import Controller.Centre_detailsController;
 import Controller.Commentaire_Controller;
 import Controller.Salle_Controller;
+import Model.Centre;
 import Model.Commentaire;
 import Model.Salle;
 import Model.Utilisateur;
 
 public class Centre_details_activity extends AppCompatActivity {
 public static ArrayList<Utilisateur> list;
+Centre centre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +33,7 @@ public static ArrayList<Utilisateur> list;
         setContentView(R.layout.activity_centre_details);
         list= new ArrayList<>(Arrays.asList(new Utilisateur(1,"Hakim ELHAIBA",R.drawable.icon_profile),
                 new Utilisateur(2,"Doon Kaiji",R.drawable.icon_profile2),new Utilisateur(3,"GUITAR TIZ ASSO",R.drawable.icon_profile)));
-
+         centre =new Centre("CEFT IBN ZOHR-TIZNIT",R.drawable.img_centre);
         ArrayList<Commentaire> listcmnts = new ArrayList<>(Arrays.asList(new Commentaire(1,"Nov 25,2022",cmnt,1),
                 new Commentaire(2,"Oct 10,2021",cmnt,2),new Commentaire(1,"Dec 11,2022",cmnt,3),new Commentaire(2,"Oct 10,2021",cmnt,2)));
         ArrayList<Salle> listsalle= new ArrayList<Salle>(
@@ -52,8 +58,13 @@ public static ArrayList<Utilisateur> list;
         recyclerView1.setAdapter(salleController);
         recyclerViewcmnt.setLayoutManager(layoutManager2);
         recyclerViewcmnt.setAdapter(cmntcontroller);
+        centre.setSalles_centre(listsalle);
 
+    }
 
-
+    public void reserver(View view) {
+        Intent intent = new Intent(this,ReservationActivity.class);
+        intent.putExtra("Centre",centre);
+        startActivity(intent);
     }
 }

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Verfication_motdepasse_oublieActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Crée nouveau mot de passe"
+                android:textColor="#120D26"
+                android:layout_marginLeft="25dp"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/img_confirm_pswd" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="120dp"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="écrire votre nouveau Mot de passe"
+                android:textColor="#120D26"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/IdEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custmor_input"
+                android:drawableStart="@drawable/custom_password_icon"
+                android:drawableEnd="@drawable/icon_visibility_off"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Mot de passe"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/IdPassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/custmor_input"
+                android:drawableStart="@drawable/custom_password_icon"
+                android:drawableEnd="@drawable/icon_visibility_off"
+                android:drawablePadding="12dp"
+                android:hint="Mot de passe"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="textPassword"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/SwitchRappelles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="me rappelles"
+                android:layoutDirection="rtl"
+                android:textColor="#120D26"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:layout_marginLeft="10dp"
+                app:thumbTint="@drawable/custom_switch_btn"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sidentifier"
+                android:onClick="validermotdepasse"
+                android:layout_width="271dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:paddingRight="12dp"
+                android:paddingLeft="25dp"
+                android:layout_marginRight="55dp"
+                android:layout_marginLeft="15dp"
+                android:text="VERIFIER"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableEnd="@drawable/icon_nextblue"
+                android:background="@drawable/button_person"
+                android:textColor="@color/white"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

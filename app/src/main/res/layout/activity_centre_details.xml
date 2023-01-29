@@ -191,6 +191,8 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/btnreserver"
+                    android:onClick="reserver"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="15dp"
                     android:background="@drawable/button_backgraound2"
