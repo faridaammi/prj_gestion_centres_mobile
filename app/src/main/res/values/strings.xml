@@ -9,4 +9,5 @@
         <item>@drawable/img_pub2</item>
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_102_avis">(102 avis)</string>
 </resources>
