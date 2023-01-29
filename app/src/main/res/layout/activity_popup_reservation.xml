@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="269dp"
-    android:layout_height="380dp"
+    android:layout_height="390dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="31dp"
     app:cardElevation="@dimen/cardview_compat_inset_shadow"
@@ -45,6 +45,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="189dp"
             android:layout_height="40dp"
+            android:id="@+id/voirtickets"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
@@ -58,12 +59,14 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="189dp"
             android:layout_height="40dp"
+            android:id="@+id/btnanuller"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/btn_annuler_reservation"
             android:fontFamily="@font/poppins_medium"
             android:paddingRight="10dp"
+            android:layout_marginBottom="10dp"
             android:text="ANNULER"
             android:textColor="@color/green"
             android:textSize="10dp" />

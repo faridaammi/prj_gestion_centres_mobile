@@ -31,12 +31,8 @@ public class ReservationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayList<Salle> listsalle= new ArrayList<Salle>(
-                Arrays.asList(new Salle(149,"14"),new Salle(30,"4"),
-                        new Salle(230,"12"),new Salle(50,"6"),
-                        new Salle(28,"45")));
-        listsalle.get(3).setImage_salle(R.drawable.img_salle2);
-        listsalle.get(0).setImage_salle(R.drawable.img_salle);
+        Intent centreintent = getIntent();
+        Centre centre =(Centre) centreintent.getSerializableExtra("Centre");
         String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         setContentView(R.layout.activity_reservation);
         btn_addinvite = (Button) findViewById(R.id.btnaddinvite);
@@ -48,7 +44,7 @@ public class ReservationActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rceyclesalle);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        Salle_Controller salleController = new Salle_Controller(this,listsalle);
+        Salle_Controller salleController = new Salle_Controller(this,centre.getSalles_centre());
         recyclerView.setAdapter(salleController);
         datedepart.setText(new SimpleDateFormat("MMM").format(new Date())+new SimpleDateFormat("D").format(new Date()));
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -81,5 +77,10 @@ public class ReservationActivity extends AppCompatActivity {
         comptinvite++;
         txtinvite.setText(String.valueOf(comptinvite));
 
+    }
+
+    public void continuereservation(View view) {
+        Intent intent = new Intent(this,ReservationdetailsActivity.class);
+        startActivity(intent);
     }
 }
