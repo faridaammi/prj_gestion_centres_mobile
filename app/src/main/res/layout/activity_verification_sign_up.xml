@@ -49,10 +49,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:flow_firstHorizontalBias="@integer/material_motion_duration_medium_2"
+        android:id="@+id/linear1"
+        android:gravity="fill_horizontal">
     <EditText
         android:id="@+id/number_1"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -62,14 +70,11 @@
         android:drawablePadding="12dp"
         android:inputType="number"
         android:fontFamily="@font/poppins_semi_bold"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textSize="14sp"/>
     <EditText
         android:id="@+id/number_2"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -77,17 +82,14 @@
         android:background="@drawable/custmor_input"
         android:drawablePadding="12dp"
         android:inputType="number"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/poppins_semi_bold"
-        android:textSize="14sp"
-        app:layout_constraintLeft_toRightOf="@id/number_1"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:textSize="14sp" />
     <EditText
         android:id="@+id/number_3"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -95,17 +97,15 @@
         android:background="@drawable/custmor_input"
         android:drawablePadding="12dp"
         android:inputType="number"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="14sp"
-        app:layout_constraintLeft_toRightOf="@id/number_2"
-        app:layout_constraintTop_toTopOf="parent"
         />
     <EditText
         android:id="@+id/number_4"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
@@ -113,13 +113,12 @@
         android:background="@drawable/custmor_input"
         android:drawablePadding="12dp"
         android:inputType="number"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:textAlignment="center"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="14sp"
-        app:layout_constraintLeft_toRightOf="@id/number_3"
-        app:layout_constraintTop_toTopOf="parent"
         />
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_continue"
         android:layout_width="match_parent"
@@ -135,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/number_4"/>
+        app:layout_constraintTop_toBottomOf="@id/linear1"/>
     <TextView
         android:id="@+id/txt_pas_compte"
         android:layout_width="wrap_content"
