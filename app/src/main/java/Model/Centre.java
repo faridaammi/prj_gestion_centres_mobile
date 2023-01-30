@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Centre {
+public class Centre implements Serializable {
     private int id_centre;
     private String nom_centre;
     private String adresse_centre;

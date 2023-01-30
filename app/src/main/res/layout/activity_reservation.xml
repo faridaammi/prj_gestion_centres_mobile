@@ -101,9 +101,94 @@
                 android:layout_marginTop="15dp"
                 android:text="Invité"
                 android:textColor="#120D26"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_background3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btndeleteinvite"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/button_backgraound2"
+                        android:drawableStart="@drawable/moins"
+                        android:fontFamily="@font/poppins_bold"
+                        android:onClick="deleteinvite"
+                        android:paddingStart="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <TextView
+                        android:id="@+id/txt_invite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0"
+                        android:textColor="#5669FF"
+                        android:textSize="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnaddinvite"
+                        app:layout_constraintHorizontal_bias="0.513"
+                        app:layout_constraintStart_toEndOf="@+id/btndeleteinvite"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnaddinvite"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginEnd="14dp"
+                        android:background="@drawable/button_backgraound2"
+                        android:drawableStart="@drawable/plus"
+                        android:fontFamily="@font/poppins_bold"
+                        android:onClick="addinvite"
+                        android:paddingStart="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Sélectionner les salles "
+                android:textColor="#120D26"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rceyclesalle"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Continue"
+                android:onClick="continuereservation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_person"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Continue"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                />
 
         </LinearLayout>
 

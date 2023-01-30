@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
-public class Salle {
+import java.io.Serializable;
+
+public class Salle implements Serializable {
     private int id_salle;
     private String numero_salle;
     private int etage_salle;
