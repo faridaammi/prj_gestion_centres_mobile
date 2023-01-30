@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class ReservationActivity extends AppCompatActivity {
+public class ReservationActivity extends AppCompatActivity{
     CalendarView calendarView;
     TextView datedepart, datefin;
     @Override
