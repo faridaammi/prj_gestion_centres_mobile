@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AccueilActivity"
+            android:name=".Centre_details_activity"
             android:exported="false">
 
             <meta-data
@@ -131,7 +131,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Centre_details_activity"
+            android:name=".AccueilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

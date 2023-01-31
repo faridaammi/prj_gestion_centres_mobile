@@ -11,4 +11,5 @@
     <color name="icon_color">#CCCCCC</color>
     <color name="grey_line">#909090</color>
     <color name="green">#06D6A0</color>
+    <color name="btncolor">#5669FF</color>
 </resources>
