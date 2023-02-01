@@ -1,22 +1,37 @@
 package com.example.prj_gestion_centre_mobile;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.ImageButton;
 
-import java.lang.reflect.Array;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class remplissez_profil extends AppCompatActivity {
 
     AutoCompleteTextView list_type;
-    EditText txt_email;
+    EditText txt_email,dt_creation;
+    CircleImageView logo;
+    ImageButton edite_pic;
+
+    private final int CAMERA_REQ_CODE = 1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +44,54 @@ public class remplissez_profil extends AppCompatActivity {
         list_type.setAdapter(arrayAdapter);
 
         txt_email = findViewById(R.id.IdEmail_organisme);
+        dt_creation = findViewById(R.id.date_creation);
+        logo = findViewById(R.id.profile_image);
+        edite_pic = findViewById(R.id.btn_update_pic);
 
         Intent intent = getIntent();
         txt_email.setText(intent.getExtras().get("email").toString());
 
+        final Calendar myCalendar = Calendar.getInstance();
+        final int year = myCalendar.get(Calendar.YEAR);
+        final int month = myCalendar.get(Calendar.MONTH);
+        final int day = myCalendar.get(Calendar.DAY_OF_MONTH);
+
+        dt_creation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dialog = new DatePickerDialog(remplissez_profil.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month = month+1;
+                        String date = day+" - "+month+" - "+year;
+                        dt_creation.setText(date);
+                    }
+                },year, month, day);
+                dialog.show();
+            }
+        });
+
+        edite_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCam = new Intent(Intent.ACTION_PICK);
+                intentCam.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intentCam,CAMERA_REQ_CODE);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK)
+        {
+            if(requestCode == CAMERA_REQ_CODE)
+            {
+                logo.setImageURI(data.getData());
+            }
+        }
     }
 }

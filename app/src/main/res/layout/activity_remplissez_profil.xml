@@ -41,35 +41,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/icon_profile2"
-        app:civ_border_width="2dp"
-        app:civ_border_color="@color/icon_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <EditText
-        android:id="@+id/nom_organisme"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="210dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:ems="10"
-        android:background="@drawable/custmor_input"
-        android:drawableStart="@drawable/custom_ic_user"
-        android:drawablePadding="12dp"
-        android:hint="Nom d'organisme"
-        android:inputType="text"
-        android:fontFamily="@font/poppins_regular"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="90dp"
+                android:src="@drawable/icon_profile2"
+                app:civ_border_color="@color/icon_color"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/nom_organisme"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="210dp"
+                android:background="@drawable/custmor_input"
+                android:drawableStart="@drawable/custom_ic_user"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nom d'organisme"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/IdEmail_organisme"
         android:layout_width="match_parent"
@@ -173,6 +175,17 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Numero_tele"/>
+
+            <ImageButton
+                android:id="@+id/btn_update_pic"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="#1AB65C"
+                app:layout_constraintBottom_toTopOf="@+id/nom_organisme"
+                app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:srcCompat="@drawable/ic_edit_pic" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
