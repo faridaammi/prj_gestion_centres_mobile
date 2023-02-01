@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/accueilFragment">
+
+    <fragment
+        android:id="@+id/centreFragment"
+        android:name="com.example.prj_gestion_centre_mobile.CentreFragment"
+        android:label="fragment_centre"
+        tools:layout="@layout/fragment_centre" />
+    <fragment
+        android:id="@+id/accueilFragment"
+        android:name="com.example.prj_gestion_centre_mobile.AccueilFragment"
+        android:label="fragment_accueil"
+        tools:layout="@layout/fragment_accueil" />
+    <fragment
+        android:id="@+id/favorisFragment"
+        android:name="com.example.prj_gestion_centre_mobile.FavorisFragment"
+        android:label="fragment_favoris"
+        tools:layout="@layout/fragment_favoris" />
+</navigation>

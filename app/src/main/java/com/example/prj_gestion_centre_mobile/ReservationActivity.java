@@ -22,7 +22,11 @@ import Controller.Salle_Controller;
 import Model.Centre;
 import Model.Salle;
 
-public class ReservationActivity extends AppCompatActivity {
+import Controller.Salle_Controller;
+import Model.Centre;
+import Model.Salle;
+
+public class ReservationActivity extends AppCompatActivity{
     CalendarView calendarView;
     RecyclerView recyclerView;
     TextView datedepart, datefin, txtinvite;
@@ -48,7 +52,6 @@ public class ReservationActivity extends AppCompatActivity {
         recyclerView.setAdapter(salleController);
         datedepart.setText(new SimpleDateFormat("MMM").format(new Date())+new SimpleDateFormat("D").format(new Date()));
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {

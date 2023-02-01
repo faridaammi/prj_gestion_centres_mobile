@@ -73,8 +73,7 @@
                     android:layout_marginTop="18dp"
                     android:fontFamily="sans-serif-black"
 
-                    android:text="CEFT IBN ZOHR
-TIZNIT"
+                    android:text="CEFT IBN ZOHR TIZNIT"
                     android:textColor="@color/black"
 
                     android:textSize="18sp" />
@@ -94,9 +93,7 @@ TIZNIT"
                     android:layout_width="98dp"
                     android:layout_height="24dp"
                     android:gravity="center"
-                    android:text="@string/_102_avis"
-                    android:textColor="@color/black" />
-
+                    android:text="120 avis"></TextView>
 
             </LinearLayout>
         </LinearLayout>
