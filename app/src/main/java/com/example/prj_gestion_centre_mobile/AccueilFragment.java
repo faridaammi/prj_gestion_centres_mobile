@@ -1,16 +1,22 @@
 package com.example.prj_gestion_centre_mobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +26,7 @@ import Model.Publication;
 
 public class AccueilFragment extends Fragment {
 
+    private ImageButton btn_enregistrement,btn_notification;
     private RecyclerView recyclerViewPub;
     private List<Publication> listItems;
     LinearLayoutManager layoutManager;
@@ -45,6 +52,8 @@ public class AccueilFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerViewPub = view.findViewById(R.id.recyclerViewPub);
+        btn_enregistrement=view.findViewById(R.id.btn_enregistrement);
+        btn_notification=view.findViewById(R.id.btn_notification);
         layoutManager=new LinearLayoutManager(getContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewPub.setLayoutManager(layoutManager);
@@ -60,5 +69,28 @@ public class AccueilFragment extends Fragment {
         adapterPublication=new AccueilController(getContext(),listItems);
         recyclerViewPub.setAdapter(adapterPublication);
         adapterPublication.notifyDataSetChanged();
+        btn_enregistrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AfficherFragmentFavors();
+            }
+        });
+        btn_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(),NotificationActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+
+    }
+    public void AfficherFragmentFavors(){
+        FavorisFragment favorisFragment=new FavorisFragment();
+        FragmentManager fm=getParentFragmentManager();
+        FragmentTransaction ft=fm.beginTransaction();
+        ft.replace(R.id.homeContainer, favorisFragment);
+        ft.commit();
     }
 }

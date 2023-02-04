@@ -43,9 +43,9 @@ public class AccueilActivity extends AppCompatActivity {
                     case R.id.centreId:
                         getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,centreFragment).commit();
                         return true;
-                    case R.id.settingId:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,favorisFragment).commit();
-                        return true;
+//                    case R.id.settingId:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.homeContainer,favorisFragment).commit();
+//                        return true;
                 }
                 return false;
             }

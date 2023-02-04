@@ -1,8 +1,6 @@
 package Controller;
 
 import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +26,7 @@ public class AccueilController  extends RecyclerView.Adapter<AccueilController.V
     @NonNull
     @Override
     public AccueilController.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_acceuil,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_accueil,parent,false);
         return new ViewHolder(view);
     }
 

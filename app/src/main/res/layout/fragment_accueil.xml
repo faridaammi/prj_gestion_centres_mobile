@@ -40,20 +40,19 @@
                 android:textColor="@color/blue_mobile"
                 android:textSize="20dp" />
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <ImageButton
+                android:id="@+id/btn_enregistrement"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:srcCompat="@drawable/icon_bookmark_border" />
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/icon_bookmark_border" />
 
-            <ImageView
-                android:id="@+id/imageView4"
+            <ImageButton
+                android:id="@+id/btn_notification"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:srcCompat="@drawable/icon_notifications" />
-
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/icon_notifications" />
         </LinearLayout>
 
         <View

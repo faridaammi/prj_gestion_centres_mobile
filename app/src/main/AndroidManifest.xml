@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Prj_gestion_centre_mobile"
         tools:targetApi="31">
         <activity
+            android:name=".NotificationActivity"
+            android:parentActivityName=".AccueilActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReservationdetailsActivity"
             android:exported="false">
             <meta-data
@@ -22,8 +26,6 @@
         <activity
             android:name=".Verfication_motdepasse_oublieActivity"
             android:exported="false">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -31,8 +33,6 @@
         <activity
             android:name=".Mot_de_passe_oublie"
             android:exported="false">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -54,7 +54,6 @@
         <activity
             android:name=".Centre_details_activity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -110,12 +109,7 @@
         </activity>
         <activity
             android:name=".signUp"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -136,8 +130,12 @@
         </activity>
         <activity
             android:name=".AccueilActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

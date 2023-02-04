@@ -55,7 +55,6 @@ public class FavorisFragment extends Fragment {
         recyclerViewFav=view.findViewById(R.id.recyclerViewFav);
         gridLayoutManager=new GridLayoutManager(getContext(),2,RecyclerView.VERTICAL,false);
         gridLayoutManager.setOrientation(RecyclerView.VERTICAL);
-
         recyclerViewFav.setLayoutManager(gridLayoutManager);
         //recyclerViewFav.setHasFixedSize(true);
         listItems=new ArrayList<>();
