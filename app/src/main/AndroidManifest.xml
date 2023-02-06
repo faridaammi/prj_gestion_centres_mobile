@@ -13,9 +13,13 @@
         android:theme="@style/Theme.Prj_gestion_centre_mobile"
         tools:targetApi="31">
         <activity
+            android:name=".FavorisActivity"
+            android:exported="false"
+            android:parentActivityName=".AccueilActivity"/>
+        <activity
             android:name=".NotificationActivity"
-            android:parentActivityName=".AccueilActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AccueilActivity" />
         <activity
             android:name=".ReservationdetailsActivity"
             android:exported="false">
@@ -136,6 +140,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -51,6 +53,9 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent=new Intent(AccueilActivity.this,NotificationActivity.class);
+        PendingIntent pendingIntent=PendingIntent.getActivity(this,10,intent,PendingIntent.FLAG_CANCEL_CURRENT);
+
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             NotificationChannel channel=new NotificationChannel("notification","My notification", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager=getSystemService(NotificationManager.class);
@@ -61,6 +66,7 @@ public class AccueilActivity extends AppCompatActivity {
         builder.setContentText("Matb9awch tpushiw les erreurs !");
         builder.setSmallIcon(R.drawable.ic_launcher_background);
         builder.setAutoCancel(true);
+        builder.setContentIntent(pendingIntent);
 
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(AccueilActivity.this);
         managerCompat.notify(1,builder.build());
