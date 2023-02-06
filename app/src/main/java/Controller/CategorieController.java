@@ -1,27 +1,14 @@
 package Controller;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.prj_gestion_centre_mobile.R;
-
 import java.util.ArrayList;
-
-import Model.Salle;
 
 public class CategorieController  extends RecyclerView.Adapter<CategorieController.ViewHolder>{
     private Context context;

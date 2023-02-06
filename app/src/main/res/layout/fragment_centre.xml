@@ -80,6 +80,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:id="@+id/recyclercategorie"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclercentre"/>
     </LinearLayout>
 
 
