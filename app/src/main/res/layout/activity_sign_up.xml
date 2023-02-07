@@ -7,33 +7,6 @@
     android:padding="40dp"
     tools:context=".signUp">
 
-    <ImageButton
-        android:id="@+id/IdIcon_back"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:src="@drawable/ic_back"
-        android:background="#fff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="16dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:ems="10"
-        android:drawablePadding="12dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="S'inscrire"
-        android:textColor="#120D26"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
     <EditText
         android:id="@+id/IdNum_organisme"
         android:layout_width="match_parent"
