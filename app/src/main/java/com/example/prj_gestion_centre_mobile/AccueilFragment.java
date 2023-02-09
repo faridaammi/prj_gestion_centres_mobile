@@ -72,8 +72,8 @@ public class AccueilFragment extends Fragment {
         btn_enregistrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                AfficherFragmentFavors();
+                Intent intent=new Intent(getContext(),FavorisActivity.class);
+                getContext().startActivity(intent);
             }
         });
         btn_notification.setOnClickListener(new View.OnClickListener() {

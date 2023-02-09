@@ -6,14 +6,18 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -29,13 +33,21 @@ public class remplissez_profil extends AppCompatActivity {
     EditText txt_email,dt_creation;
     CircleImageView logo;
     ImageButton edite_pic;
+    TextView title;
 
     private final int CAMERA_REQ_CODE = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_remplissez_profil);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("Remplissez votre profil");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         list_type = findViewById(R.id.typeOrganisme);
         String[] value = {"Sport","Arts","Etude","Developement"};
@@ -43,13 +55,14 @@ public class remplissez_profil extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,value);
         list_type.setAdapter(arrayAdapter);
 
+
         txt_email = findViewById(R.id.IdEmail_organisme);
         dt_creation = findViewById(R.id.date_creation);
         logo = findViewById(R.id.profile_image);
         edite_pic = findViewById(R.id.btn_update_pic);
 
-        Intent intent = getIntent();
-        txt_email.setText(intent.getExtras().get("email").toString());
+//        Intent intent = getIntent();
+//        txt_email.setText(intent.getExtras().get("email").toString());
 
         final Calendar myCalendar = Calendar.getInstance();
         final int year = myCalendar.get(Calendar.YEAR);

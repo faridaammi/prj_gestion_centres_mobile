@@ -6,21 +6,7 @@
     android:layout_height="match_parent"
     android:padding="40dp"
     tools:context=".SignIn">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:ems="10"
-        android:drawablePadding="12dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="S'identifier"
-        android:textColor="#120D26"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
     <EditText
         android:id="@+id/IdEmail"
         android:layout_width="match_parent"

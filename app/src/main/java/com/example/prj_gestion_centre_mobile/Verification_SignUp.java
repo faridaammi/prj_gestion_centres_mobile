@@ -1,5 +1,6 @@
 package com.example.prj_gestion_centre_mobile;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,23 +22,28 @@ public class Verification_SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification_sign_up);
 
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("Vérification email");
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         txt_email = findViewById(R.id.txt_email);
         String email;
 
-        Intent intent = getIntent();
-        txt_email.setText("Nous vous avons envoyé le code de vérification au "+intent.getExtras().get("email").toString());
-        email = intent.getExtras().get("email").toString();
-        btn_next = findViewById(R.id.btn_continue);
+//        Intent intent = getIntent();
+//        txt_email.setText("Nous vous avons envoyé le code de vérification au "+intent.getExtras().get("email").toString());
+//        email = intent.getExtras().get("email").toString();
+//        btn_next = findViewById(R.id.btn_continue);
 
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                    Intent intent1 = new Intent(Verification_SignUp.this,remplissez_profil.class);
-                    intent1.putExtra("email",email);
-                    startActivity(intent1);
-            }
-        });
+//        btn_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+////                    Intent intent1 = new Intent(Verification_SignUp.this,remplissez_profil.class);
+////                    intent1.putExtra("email",email);
+////                    startActivity(intent1);
+//            }
+//        });
 
 
     }
