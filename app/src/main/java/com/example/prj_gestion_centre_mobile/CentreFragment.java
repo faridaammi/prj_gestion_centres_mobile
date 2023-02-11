@@ -23,6 +23,7 @@ import Model.Centre;
 public class CentreFragment extends Fragment {
     RecyclerView recyclerView;
     ArrayList<String> list_categorie;
+  public static   CentreController adapter1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,16 +72,7 @@ public class CentreFragment extends Fragment {
         list_categorie = new ArrayList<>(Arrays.asList("recommandé","conférence","Theatre","lecture","Categorie3","lecture4","Sport"));
         CategorieController adapter= new CategorieController(getContext(),list_categorie);
         recyclerView.setAdapter(adapter);
-        Centre c1=new Centre("CEFT IBN ZOHR-TIZNIT",R.drawable.img_centre);
-        Centre c2=new Centre("CEFT IBN ZOHR-TIZNIT2",R.drawable.img_centre2);
-        Centre c3=new Centre("CEFT IBN ZOHR-TIZNIT3",R.drawable.img_centre3);
-        Centre c4=new Centre("Maison culture MED KHAIR EDDINE",R.drawable.img_dartaqafa);
-        c1.setAdresse_centre("42 AL MASSIRA - TIZNIT");
-        c2.setAdresse_centre("adresse osafi ");
-        c3.setAdresse_centre("42 AL MASSIRA - TIZNIT 33");
-        c4.setAdresse_centre("02 ROUTE AGADIR - TIZNIT");
-        ArrayList<Centre> centres = new ArrayList<>(Arrays.asList(c1,c2,c3,c4));
-        CentreController adapter1 = new CentreController(getContext(),centres);
+        adapter1 = new CentreController(getContext(),Centre.getallcentre(getContext()));
         RecyclerView recyclerViewcentre = (RecyclerView) view.findViewById(R.id.recyclercentre);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerViewcentre.setLayoutManager(layoutManager2);

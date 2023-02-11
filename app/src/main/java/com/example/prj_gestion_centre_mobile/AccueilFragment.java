@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class AccueilFragment extends Fragment {
     private RecyclerView recyclerViewPub;
     private List<Publication> listItems;
     LinearLayoutManager layoutManager;
+    TextView txt_nom_organisme;
     private RecyclerView.Adapter adapterPublication;
     public AccueilFragment() {
         // Required empty public constructor
@@ -57,14 +59,22 @@ public class AccueilFragment extends Fragment {
         layoutManager=new LinearLayoutManager(getContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewPub.setLayoutManager(layoutManager);
+        txt_nom_organisme = (TextView)view.findViewById(R.id.txtviewnomoraganisme);
+
+        txt_nom_organisme.setText(getActivity().getIntent().getExtras().getString("nom_organisme"));
         recyclerViewPub.setHasFixedSize(true);
         //recyclerViewPub.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();
         Publication items1 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
         Publication items2 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
+        Publication items3 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
+        Publication items4 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
+
 
         listItems.add(items1);
         listItems.add(items2);
+        listItems.add(items3);
+        listItems.add(items4);
 
         adapterPublication=new AccueilController(getContext(),listItems);
         recyclerViewPub.setAdapter(adapterPublication);

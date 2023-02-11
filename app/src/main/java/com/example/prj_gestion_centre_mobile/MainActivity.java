@@ -24,6 +24,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     BottomNavigationView butt_nav;
     NavController navController;
     @Override

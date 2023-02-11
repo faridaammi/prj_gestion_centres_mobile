@@ -1,9 +1,27 @@
 package Model;
 
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.example.prj_gestion_centre_mobile.CentreFragment;
+import com.example.prj_gestion_centre_mobile.R;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+
+
 public class Centre implements Serializable {
+    final static String  url ="http://192.168.0.107:8000/api/getcentre";
     private int id_centre;
     private String nom_centre;
     private String adresse_centre;
@@ -84,4 +102,48 @@ public class Centre implements Serializable {
         this.img_centre = img_centre;
     }
     public Centre(){  }
+
+
+    public static ArrayList<Centre> getallcentre(Context context){
+        ArrayList<Centre> centres = new ArrayList<>();
+        ProgressDialog dialog = new ProgressDialog(context);
+        dialog.setMessage("en cours de chargement");
+        dialog.show();
+
+        new AsyncHttpClient().get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                String responseString = new String(responseBody);
+                try {
+                    JSONObject jsonObject = new JSONObject(responseString);
+                   JSONArray jsonArray = new JSONArray(jsonObject.getString("Centres"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                        Log.d("object",jsonObject1.toString());
+                        Centre centre = new Centre();
+                        centre.setId_centre(Integer.valueOf(jsonObject1.getString("idCentre")));
+                        centre.setNom_centre(jsonObject1.getString("nomCentre"));
+                        centre.setAdresse_centre(jsonObject1.getString("adresseCentre"));
+                        centre.setDescriptioncentre(jsonObject1.getString("descriptionCentre"));
+                        centre.setImg_centre(R.drawable.img_dartaqafa);
+                        centres.add(centre);
+                        CentreFragment.adapter1.notifyDataSetChanged();
+                        dialog.dismiss();
+
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("error ",e.getMessage());
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                 Log.e("error ",error.getMessage());
+            }
+        });
+        return  centres;
+
+    }
 }

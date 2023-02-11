@@ -5,76 +5,85 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccueilFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical">
-
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Bonjour,"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtviewnomoraganisme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Asma"
+                    android:textColor="@color/blue_mobile"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_enregistrement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:src="@drawable/icon_bookmark_border" />
+
+                <ImageButton
+                    android:id="@+id/btn_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:src="@drawable/icon_notifications" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/grey_line"/>
+
 
             <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Publication"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Bonjour,"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-10dp"
+                android:textSize="20dp"></TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Asma"
-                android:textColor="@color/blue_mobile"
-                android:textSize="20dp" />
 
-            <ImageButton
-                android:id="@+id/btn_enregistrement"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/icon_bookmark_border" />
-
-            <ImageButton
-                android:id="@+id/btn_notification"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/icon_notifications" />
         </LinearLayout>
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/grey_line"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Publication"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="-10dp"
-            android:textSize="20dp"></TextView>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewPub"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+    </ScrollView>
+
 
 
 </FrameLayout>
