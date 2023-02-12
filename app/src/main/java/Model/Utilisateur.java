@@ -1,11 +1,27 @@
 package Model;
 
-import com.example.prj_gestion_centre_mobile.Centre_details_activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
+import com.example.prj_gestion_centre_mobile.AccueilActivity;
+import com.example.prj_gestion_centre_mobile.Centre_details_activity;
+import com.example.prj_gestion_centre_mobile.SignIn;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Utilisateur {
+import cz.msebera.android.httpclient.Header;
+
+public class Utilisateur implements Serializable {
     private int id_utilisateur;
     private String motdepass_utilisateur;
     private String nom_utilisateur;
@@ -116,7 +132,6 @@ public class Utilisateur {
     }
 
 
-
     public Utilisateur(int id_utilisateur, String motdepass_utilisateur, String nom_utilisateur, String adresse, String email_utilisateur, int tele_utilisateur, int etat_utilisateur, Date date_de_creation, Date date_de_validation, int IP_utilisateur, long token) {
         this.id_utilisateur = id_utilisateur;
         this.motdepass_utilisateur = motdepass_utilisateur;
@@ -130,10 +145,10 @@ public class Utilisateur {
         this.IP_utilisateur = IP_utilisateur;
         this.token = token;
     }
-    public Utilisateur (int id_utilisateur,String nom_utilisateur,int img_utilisateur){
+    public Utilisateur(int id_utilisateur, String nom_utilisateur, int img_utilisateur) {
         this.id_utilisateur = id_utilisateur;
         this.nom_utilisateur = nom_utilisateur;
-        this.img_utilisateur=img_utilisateur;
+        this.img_utilisateur = img_utilisateur;
 
     }
 
@@ -153,11 +168,11 @@ public class Utilisateur {
                 ", token=" + token +
                 '}';
     }
-    public static Utilisateur finduser(int id){
+    public static Utilisateur finduser(int id) {
         Utilisateur utilisateur = null;
-        for(Utilisateur user : Centre_details_activity.list){
-            if (user.getId_utilisateur()==id){
-                utilisateur= user;
+        for (Utilisateur user : Centre_details_activity.list) {
+            if (user.getId_utilisateur() == id) {
+                utilisateur = user;
                 break;
             }
         }

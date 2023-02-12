@@ -61,7 +61,7 @@ public class AccueilFragment extends Fragment {
         recyclerViewPub.setLayoutManager(layoutManager);
         txt_nom_organisme = (TextView)view.findViewById(R.id.txtviewnomoraganisme);
 
-        txt_nom_organisme.setText(getActivity().getIntent().getExtras().getString("nom_organisme"));
+        txt_nom_organisme.setText(SignIn.nom_organisme.equals("null")?"Asma":SignIn.nom_organisme);
         recyclerViewPub.setHasFixedSize(true);
         //recyclerViewPub.setLayoutManager(new LinearLayoutManager(this));
         listItems = new ArrayList<>();

@@ -28,7 +28,8 @@ import java.util.regex.Pattern;
 import cz.msebera.android.httpclient.Header;
 
 public class SignIn extends AppCompatActivity {
-    final String url_login ="http://192.168.0.107:8000/api/login";
+    final String url_login ="http://192.168.1.8:8000/api/login";
+    public static String nom_organisme;
     Button btn_identifier;
     EditText txt_password,txt_username;
     TextView txt_Sinscrire;
@@ -69,6 +70,7 @@ public class SignIn extends AppCompatActivity {
 //        txt_username.setText(intent.getExtras().get("email").toString());
 //        txt_password.setText(intent.getExtras().get("password").toString());
     }
+
     public boolean validateEmail(EditText emailtxt)
     {
         String emailInput = emailtxt.getText().toString();
@@ -91,8 +93,8 @@ public class SignIn extends AppCompatActivity {
                          dialog.dismiss();
                          if (object.getString("message").equals("Kayn had luser")){
                              JSONObject user = new JSONObject(object.getString("Utilisateur"));
+                             nom_organisme=user.getString("nom_Organisme");
                              Intent intent = new Intent(SignIn.this,AccueilActivity.class);
-                             intent.putExtra("nom_organisme",user.getString("nom_Organisme"));
                              intent.putExtra("ID_organisme",user.getString("id_Organisme"));
                              startActivity(intent);
                          }

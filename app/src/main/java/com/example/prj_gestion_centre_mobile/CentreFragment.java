@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +24,7 @@ import Model.Centre;
 
 public class CentreFragment extends Fragment {
     RecyclerView recyclerView;
+    TextView nom_organisme;
     ArrayList<String> list_categorie;
   public static   CentreController adapter1;
 
@@ -67,6 +70,8 @@ public class CentreFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView= (RecyclerView) view.findViewById(R.id.recyclercategorie);
+        nom_organisme=view.findViewById(R.id.txt_nomorganisme);
+        nom_organisme.setText(SignIn.nom_organisme.equals("null")?"Asma":SignIn.nom_organisme);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
         list_categorie = new ArrayList<>(Arrays.asList("recommandé","conférence","Theatre","lecture","Categorie3","lecture4","Sport"));
