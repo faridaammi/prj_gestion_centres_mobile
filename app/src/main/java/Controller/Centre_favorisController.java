@@ -41,7 +41,7 @@ public class Centre_favorisController extends RecyclerView.Adapter<Centre_favori
     @Override
     public void onBindViewHolder(@NonNull Centre_favorisController.ViewHolder holder, int position) {
         Centre item=centreList.get(position);
-        holder.imgv_favCentre.setBackground(context.getDrawable(item.getImg_centre()));
+      //  holder.imgv_favCentre.setBackground(context.getDrawable(item.getImg_centre()));
         holder.txt_favTitre.setText(item.getNom_centre());
         if (item.getSalles_centre()!=null){
             String size = String.valueOf(item.getSalles_centre().size());

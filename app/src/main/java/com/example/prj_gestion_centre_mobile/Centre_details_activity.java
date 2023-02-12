@@ -33,7 +33,7 @@ Centre centre;
         setContentView(R.layout.activity_centre_details);
         list= new ArrayList<>(Arrays.asList(new Utilisateur(1,"Hakim ELHAIBA",R.drawable.icon_profile),
                 new Utilisateur(2,"Doon Kaiji",R.drawable.icon_profile2),new Utilisateur(3,"GUITAR TIZ ASSO",R.drawable.icon_profile)));
-         centre =new Centre("CEFT IBN ZOHR-TIZNIT",R.drawable.img_centre);
+       //  centre =new Centre("CEFT IBN ZOHR-TIZNIT",R.drawable.img_centre);
         ArrayList<Commentaire> listcmnts = new ArrayList<>(Arrays.asList(new Commentaire(1,"Nov 25,2022",cmnt,1),
                 new Commentaire(2,"Oct 10,2021",cmnt,2),new Commentaire(1,"Dec 11,2022",cmnt,3),new Commentaire(2,"Oct 10,2021",cmnt,2)));
         ArrayList<Salle> listsalle= new ArrayList<Salle>(

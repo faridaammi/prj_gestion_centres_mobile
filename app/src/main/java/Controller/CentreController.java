@@ -1,6 +1,8 @@
 package Controller;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +33,15 @@ public class CentreController  extends RecyclerView.Adapter<CentreController.Vie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.img_centre.setBackground(context.getDrawable(list_centre.get(position).getImg_centre()));
+        if (list_centre.get(position).getImg_centre()!=null){
+            Drawable drawable = new BitmapDrawable(context.getResources(),list_centre.get(position).getImg_centre());
+            holder.img_centre.setBackground(drawable);
+        }
+        else {
+            holder.img_centre.setBackground(context.getResources().getDrawable(R.drawable.defaultimg));
+
+        }
+
         holder.txt_nom_centre.setText(list_centre.get(position).getNom_centre());
         holder.txt_adress_centre.setText(list_centre.get(position).getAdresse_centre());
 

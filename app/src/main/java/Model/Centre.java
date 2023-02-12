@@ -3,6 +3,9 @@ package Model;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.util.Log;
 
 import java.io.Serializable;
@@ -21,13 +24,13 @@ import cz.msebera.android.httpclient.Header;
 
 
 public class Centre implements Serializable {
-    final static String  url ="http://192.168.1.8:8000/api/getcentre";
+    final static String  url ="http://192.168.0.121:8000/api/getcentre";
     private int id_centre;
     private String nom_centre;
     private String adresse_centre;
     private String descriptioncentre;
     private Boolean favoris_centre;
-    private int img_centre;
+    private Bitmap img_centre;
     private ArrayList<Integer> imgs_centre;
     private ArrayList<Salle> salles_centre;
 
@@ -82,11 +85,11 @@ public class Centre implements Serializable {
         this.imgs_centre = imgs_centre;
     }
 
-    public int getImg_centre() {
+    public Bitmap getImg_centre() {
         return img_centre;
     }
 
-    public void setImg_centre(int img_centre) {
+    public void setImg_centre(Bitmap img_centre) {
         this.img_centre = img_centre;
     }
     public Centre(int id_centre, String nom_centre, String adresse_centre, String descriptioncentre, ArrayList<Integer> imgs_centre) {
@@ -97,7 +100,7 @@ public class Centre implements Serializable {
         this.imgs_centre = imgs_centre;
     }
     //pour les centres favoris:
-    public Centre(String nom_centre,int img_centre) {
+    public Centre(String nom_centre,Bitmap img_centre) {
         this.nom_centre = nom_centre;
         this.img_centre = img_centre;
     }
@@ -116,7 +119,7 @@ public class Centre implements Serializable {
                 String responseString = new String(responseBody);
                 try {
                     JSONObject jsonObject = new JSONObject(responseString);
-                   JSONArray jsonArray = new JSONArray(jsonObject.getString("Centres"));
+                    JSONArray jsonArray = new JSONArray(jsonObject.getString("Centres"));
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                         Log.d("object",jsonObject1.toString());
@@ -125,7 +128,14 @@ public class Centre implements Serializable {
                         centre.setNom_centre(jsonObject1.getString("nomCentre"));
                         centre.setAdresse_centre(jsonObject1.getString("adresseCentre"));
                         centre.setDescriptioncentre(jsonObject1.getString("descriptionCentre"));
-                        centre.setImg_centre(R.drawable.img_dartaqafa);
+                        String imageData = jsonObject1.getString("Imageblob");
+                        if (!imageData.equals("null")){
+                            byte[] imageBytes = Base64.decode(imageData, Base64.DEFAULT);
+                            Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+                            centre.setImg_centre(decodedImage);
+                        }
+
+                        //    centre.setImg_centre(R.drawable.img_dartaqafa);
                         centres.add(centre);
                         CentreFragment.adapter1.notifyDataSetChanged();
                         dialog.dismiss();
@@ -140,7 +150,7 @@ public class Centre implements Serializable {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                 Log.e("error ",error.getMessage());
+                Log.e("error ",error.getMessage());
             }
         });
         return  centres;
