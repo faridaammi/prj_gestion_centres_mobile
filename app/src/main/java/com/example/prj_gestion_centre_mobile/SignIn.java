@@ -100,6 +100,7 @@ public class SignIn extends AppCompatActivity {
                          }
                          else {
                              Log.d("makaynch", "makaynchhhh");
+                             emailtxt.setError("Cet utilisateur n'existe pas");
 
                          }
 

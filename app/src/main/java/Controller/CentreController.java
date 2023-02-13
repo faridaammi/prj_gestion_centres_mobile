@@ -1,6 +1,7 @@
 package Controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -9,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.prj_gestion_centre_mobile.Centre_details_activity;
 import com.example.prj_gestion_centre_mobile.R;
 import java.util.ArrayList;
 
@@ -41,20 +44,19 @@ public class CentreController  extends RecyclerView.Adapter<CentreController.Vie
             holder.img_centre.setBackground(context.getResources().getDrawable(R.drawable.defaultimg));
 
         }
-
         holder.txt_nom_centre.setText(list_centre.get(position).getNom_centre());
         holder.txt_adress_centre.setText(list_centre.get(position).getAdresse_centre());
-
-
-
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"test test",Toast.LENGTH_LONG).show();
+                Centre centre = list_centre.get(holder.getAdapterPosition());
+                Intent intent =new Intent(context, Centre_details_activity.class);
+                intent.putExtra("centre","centre");
+                context.startActivity(intent);
+            }
+        });
     }
-
-
-
-
-
-
     @Override
     public int getItemCount() {
         return list_centre.size();
