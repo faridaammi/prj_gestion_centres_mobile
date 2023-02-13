@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class Categorie {
-    final static String  url ="http://192.168.1.8:8000/api/getcategories";
+    final static String  url ="http://192.168.43.45:8000/api/getcategories";
     private int id_categorie;
     private String nom_categorie;
 

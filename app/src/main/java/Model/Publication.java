@@ -20,7 +20,7 @@ import java.util.Date;
 import cz.msebera.android.httpclient.Header;
 
 public class Publication {
-    final static String  url ="http://192.168.1.8:8000/api/getpublication";
+    final static String  url ="http://192.168.43.45:8000/api/getpublication";
 
     private Bitmap imgv_profile;
     private String titre_publication;
@@ -93,6 +93,7 @@ public class Publication {
                     Publication publication=new Publication();
                     publication.setTitre_publication(jsonObject1.getString("titre_publication"));
                     publication.setContenu_publication(jsonObject1.getString("contenu_publication"));
+                    publication.setDate_pubilcation(jsonObject1.getString("date_publication"));
                     String imageData = jsonObject1.getString("photo");
                     if (!imageData.equals("null")){
                         byte[] imageBytes = Base64.decode(imageData, Base64.DEFAULT);

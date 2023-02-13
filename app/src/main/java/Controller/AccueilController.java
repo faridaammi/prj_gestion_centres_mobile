@@ -48,10 +48,8 @@ public class AccueilController  extends RecyclerView.Adapter<AccueilController.V
 
         }
         holder.titre.setText(item.getTitre_publication());
-        //Date currentTime = Calendar.getInstance().getTime();
-        //holder.date.setText(currentTime.toString());
+        holder.date.setText(listPublication.get(position).getDate_pubilcation());
         holder.contenu.setText(item.getContenu_publication());
-//        holder.imagePub.setImageResource(item.getImgv_publication());
         if (listPublication.get(position).getImgv_publication()!=null){
             Drawable drawable = new BitmapDrawable(context.getResources(),listPublication.get(position).getImgv_publication());
             holder.imagePub.setBackground(drawable);

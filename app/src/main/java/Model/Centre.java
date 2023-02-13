@@ -24,7 +24,7 @@ import cz.msebera.android.httpclient.Header;
 
 
 public class Centre implements Serializable {
-    final static String  url ="http://192.168.0.121:8000/api/getcentre";
+    final static String  url ="http://192.168.43.45:8000/api/getcentre";
     private int id_centre;
     private String nom_centre;
     private String adresse_centre;
