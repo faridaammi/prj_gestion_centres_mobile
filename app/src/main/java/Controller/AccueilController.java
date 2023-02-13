@@ -1,6 +1,8 @@
 package Controller;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prj_gestion_centre_mobile.R;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import Model.Publication;
@@ -32,13 +36,30 @@ public class AccueilController  extends RecyclerView.Adapter<AccueilController.V
 
     @Override
     public void onBindViewHolder(@NonNull AccueilController.ViewHolder holder, int position) {
-        Publication item=listPublication.get(position);
-        holder.imageProfile.setImageResource(item.getImgv_profile());
-        holder.titre.setText(item.getTitre_publication());
-        holder.date.setText((CharSequence) item.getDate_pubilcation());
-        holder.contenu.setText(item.getContenu_publication());
-        holder.imagePub.setImageResource(item.getImgv_publication());
 
+        Publication item=listPublication.get(position);
+        //holder.imageProfile.setImageResource(item.getImgv_profile());
+        if (listPublication.get(position).getImgv_profile()!=null){
+            Drawable drawable = new BitmapDrawable(context.getResources(),listPublication.get(position).getImgv_profile());
+            holder.imageProfile.setBackground(drawable);
+        }
+        else {
+            holder.imageProfile.setBackground(context.getResources().getDrawable(R.drawable.icon_profile));
+
+        }
+        holder.titre.setText(item.getTitre_publication());
+        //Date currentTime = Calendar.getInstance().getTime();
+        //holder.date.setText(currentTime.toString());
+        holder.contenu.setText(item.getContenu_publication());
+//        holder.imagePub.setImageResource(item.getImgv_publication());
+        if (listPublication.get(position).getImgv_publication()!=null){
+            Drawable drawable = new BitmapDrawable(context.getResources(),listPublication.get(position).getImgv_publication());
+            holder.imagePub.setBackground(drawable);
+        }
+        else {
+            holder.imagePub.setBackground(context.getResources().getDrawable(R.drawable.defaultimg));
+
+        }
     }
 
     @Override

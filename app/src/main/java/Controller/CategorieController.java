@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.prj_gestion_centre_mobile.R;
 import java.util.ArrayList;
 
+import Model.Categorie;
+
 public class CategorieController  extends RecyclerView.Adapter<CategorieController.ViewHolder>{
     private Context context;
-    ArrayList<String> list_categorie;
-    public CategorieController(Context context, ArrayList<String> Categories) {
+    ArrayList<Categorie> list_categorie;
+    public CategorieController(Context context, ArrayList<Categorie> Categories) {
         this.context = context;
         this.list_categorie = Categories;
     }
@@ -27,7 +29,7 @@ public class CategorieController  extends RecyclerView.Adapter<CategorieControll
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.btn_categorie.setText(list_categorie.get(position));
+        holder.btn_categorie.setText(list_categorie.get(position).getNom_categorie());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

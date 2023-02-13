@@ -32,7 +32,7 @@ public class AccueilFragment extends Fragment {
     private List<Publication> listItems;
     LinearLayoutManager layoutManager;
     TextView txt_nom_organisme;
-    private RecyclerView.Adapter adapterPublication;
+    public static AccueilController adapter_publication;
     public AccueilFragment() {
         // Required empty public constructor
     }
@@ -63,22 +63,22 @@ public class AccueilFragment extends Fragment {
 
         txt_nom_organisme.setText(SignIn.nom_organisme.equals("null")?"Asma":SignIn.nom_organisme);
         recyclerViewPub.setHasFixedSize(true);
-        //recyclerViewPub.setLayoutManager(new LinearLayoutManager(this));
-        listItems = new ArrayList<>();
-        Publication items1 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
-        Publication items2 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
-        Publication items3 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
-        Publication items4 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
+        recyclerViewPub.setLayoutManager(new LinearLayoutManager(getContext()));
+//        listItems = new ArrayList<>();
+//        Publication items1 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
+//        Publication items2 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
+//        Publication items3 =new Publication(R.drawable.icon_profile,"CEFT IBN ZOHR - TIZNIT","12/01/2023","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,",R.drawable.img_publication);
+//        Publication items4 =new Publication(R.drawable.icon_profile2,"Centre Med khair eddin","22/12/2022","بدأ العد التنازلي للمهرجان الدولي للمسرح والثقافات... نتلاقاو فالمسرح.",R.drawable.img_pub2);
+//
+//
+//        listItems.add(items1);
+//        listItems.add(items2);
+//        listItems.add(items3);
+//        listItems.add(items4);
 
-
-        listItems.add(items1);
-        listItems.add(items2);
-        listItems.add(items3);
-        listItems.add(items4);
-
-        adapterPublication=new AccueilController(getContext(),listItems);
-        recyclerViewPub.setAdapter(adapterPublication);
-        adapterPublication.notifyDataSetChanged();
+        adapter_publication=new AccueilController(getContext(),Publication.getAllPublication(getContext()));
+        recyclerViewPub.setAdapter(adapter_publication);
+        adapter_publication.notifyDataSetChanged();
         btn_enregistrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

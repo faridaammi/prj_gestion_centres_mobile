@@ -19,14 +19,16 @@ import java.util.Arrays;
 
 import Controller.CategorieController;
 import Controller.CentreController;
+import Model.Categorie;
 import Model.Centre;
 
 
 public class CentreFragment extends Fragment {
     RecyclerView recyclerView;
     TextView nom_organisme;
-    ArrayList<String> list_categorie;
-  public static   CentreController adapter1;
+    //ArrayList<String> list_categorie;
+    public static  CentreController adapter1;
+    public static CategorieController adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,8 +76,8 @@ public class CentreFragment extends Fragment {
         nom_organisme.setText(SignIn.nom_organisme.equals("null")?"Asma":SignIn.nom_organisme);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        list_categorie = new ArrayList<>(Arrays.asList("recommandé","conférence","Theatre","lecture","Categorie3","lecture4","Sport"));
-        CategorieController adapter= new CategorieController(getContext(),list_categorie);
+        //list_categorie = new ArrayList<>(Arrays.asList("recommandé","conférence","Theatre","lecture","Categorie3","lecture4","Sport"));
+        adapter= new CategorieController(getContext(), Categorie.getallCategories(getContext()));
         recyclerView.setAdapter(adapter);
         adapter1 = new CentreController(getContext(),Centre.getallcentre(getContext()));
         RecyclerView recyclerViewcentre = (RecyclerView) view.findViewById(R.id.recyclercentre);
