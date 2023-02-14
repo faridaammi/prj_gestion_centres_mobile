@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.text.ParseException;
@@ -32,6 +34,7 @@ public class ReservationActivity extends AppCompatActivity{
     TextView datedepart, datefin, txtinvite;
     Button btn_addinvite,btn_deleteinvite ;
     int comptinvite=0;
+    RadioGroup radio_group_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,7 @@ public class ReservationActivity extends AppCompatActivity{
         datedepart= (TextView) findViewById(R.id.txt_datedepart);
         datefin = (TextView) findViewById(R.id.txt_datefin);
         txtinvite = (TextView) findViewById(R.id.txt_invite);
+        radio_group_date= (RadioGroup) findViewById(R.id.radio_group_date);
         recyclerView = (RecyclerView) findViewById(R.id.rceyclesalle);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
@@ -59,7 +63,12 @@ public class ReservationActivity extends AppCompatActivity{
                 SimpleDateFormat monthDisplay = new SimpleDateFormat("MMM");
 
                 try {
-                    datedepart.setText( monthDisplay.format(monthParse.parse(String.valueOf(month+1)))+" "+String.valueOf(dayOfMonth));
+                    if(radio_group_date.getCheckedRadioButtonId()==R.id.rb_date_debut){
+                        datedepart.setText( monthDisplay.format(monthParse.parse(String.valueOf(month+1)))+" "+String.valueOf(dayOfMonth));
+                    }else{
+                        datefin.setText( monthDisplay.format(monthParse.parse(String.valueOf(month+1)))+" "+String.valueOf(dayOfMonth));
+                    }
+
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

@@ -22,7 +22,6 @@
                 android:layout_marginTop="30dp"
                 android:text="Sélectionner la date"
                 android:textColor="#120D26"/>
-
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="wrap_content"
@@ -37,25 +36,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="14dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="25dp"
-                    android:text="Date enregistrer"
-                    android:textColor="#120D26"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="14dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="25dp"
-                    android:text="Date Fin"
-                    android:textColor="#120D26"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <RadioGroup
+                    android:id="@+id/radio_group_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_date_debut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="30dp"
+                        android:buttonTint="@color/blue_mobile"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Date enregistrer"
+                        android:textColor="#120D26"
+                        android:textSize="14dp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_date_fin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="30dp"
+                        android:buttonTint="@color/blue_mobile"
+                        android:checked="false"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Date Fin"
+                        android:textColor="#120D26"
+                        android:textSize="14dp" />
+                </RadioGroup>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
