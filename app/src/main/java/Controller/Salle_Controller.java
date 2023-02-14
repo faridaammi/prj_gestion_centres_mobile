@@ -38,9 +38,9 @@ public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.Vie
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtcapacite.setText(list_salle.get(position).getCapacite_salle()+" Personnes");
         holder.txtnum.setText(list_salle.get(position).getNumero_salle());
-        int img = list_salle.get(position).getImage_salle()==0? R.drawable.rectangleorange:list_salle.get(position).getImage_salle();
+      //  int img = list_salle.get(position).getImage_salle()==0? R.drawable.rectangleorange:list_salle.get(position).getImage_salle();
 
-        holder.imgsalle.setBackground(context.getDrawable(img));
+       // holder.imgsalle.setBackground(context.getDrawable(img));
     }
 
 
