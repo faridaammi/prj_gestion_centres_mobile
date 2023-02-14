@@ -2,6 +2,7 @@ package Controller;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prj_gestion_centre_mobile.R;
@@ -22,6 +24,7 @@ import Model.Salle;
 public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.ViewHolder>{
     private Context context;
     ArrayList<Salle> list_salle;
+    ArrayList<Salle> select_item_salle=new ArrayList<>();
     public Salle_Controller(Context context, ArrayList<Salle> salles) {
         this.context = context;
         this.list_salle = salles;
@@ -58,15 +61,27 @@ public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.Vie
         private LinearLayout imgsalle;
         private TextView  txtcapacite;
         private TextView  txtnum;
+        private CardView cardView_salle;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             txtcapacite= (TextView) itemView.findViewById(R.id.capacitesalle);
             txtnum= (TextView) itemView.findViewById(R.id.numsalle);
             imgsalle= (LinearLayout) itemView.findViewById(R.id.imgsalle);
+            cardView_salle=(CardView) itemView.findViewById(R.id.cardView_salle);
 
-
-
+            cardView_salle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(select_item_salle.contains(list_salle.get(getAdapterPosition()))){
+                        itemView.setBackgroundColor(Color.TRANSPARENT);
+                        select_item_salle.remove(list_salle.get(getAdapterPosition()));
+                    }else{
+                        itemView.setBackgroundResource(R.drawable.btn_background3);
+                        select_item_salle.add(list_salle.get(getAdapterPosition()));
+                    }
+                }
+            });
         }
 
 
