@@ -2,6 +2,10 @@ package Controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,8 +26,8 @@ import Model.Centre;
 
 public class Centre_detailsController  extends RecyclerView.Adapter<Centre_detailsController.ViewHolder>{
     private Context context;
-    int[]  img_centre;
-    public Centre_detailsController(Context context, int[] imgs) {
+    ArrayList<byte[]>  img_centre;
+    public Centre_detailsController(Context context, ArrayList<byte[]> imgs) {
         this.context = context;
         this.img_centre = imgs;
    }
@@ -37,7 +41,15 @@ public class Centre_detailsController  extends RecyclerView.Adapter<Centre_detai
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imgcentre.setImageResource(img_centre[position]);
+        if (img_centre.size()!=0){
+            Bitmap bitmap = BitmapFactory.decodeByteArray(img_centre.get(position), 0, img_centre.get(position).length);
+            holder.imgcentre.setImageBitmap(bitmap);
+        }
+        else {
+            holder.imgcentre.setBackground(context.getResources().getDrawable(R.drawable.defaultimg));
+
+        }
+      //  holder.imgcentre.setImageResource(img_centre[position]);
 
     }
 
@@ -45,7 +57,7 @@ public class Centre_detailsController  extends RecyclerView.Adapter<Centre_detai
 
     @Override
     public int getItemCount() {
-        return img_centre.length;
+        return img_centre.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -28,7 +28,7 @@ import Model.Utilisateur;
 import cz.msebera.android.httpclient.Header;
 
 public class signUp extends AppCompatActivity {
-    final static String url_SignUp = "http://192.168.0.121:8000/api/adduser";
+    final static String url_SignUp = "http://192.168.0.107:8000/api/adduser";
 
     Button btn_inscrer;
     EditText txt_num_organism, txt_email, txt_password, txt_conf_password;
@@ -105,7 +105,6 @@ public class signUp extends AppCompatActivity {
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                     Log.e("error", error.getMessage());
-                    isvalid = false;
                 }
             });
         } catch (Exception e) {

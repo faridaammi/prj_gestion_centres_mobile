@@ -3,8 +3,6 @@ package Model;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.util.Log;
 
@@ -12,7 +10,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.example.prj_gestion_centre_mobile.CentreFragment;
-import com.example.prj_gestion_centre_mobile.R;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -24,15 +21,23 @@ import cz.msebera.android.httpclient.Header;
 
 
 public class Centre implements Serializable {
-    final static String  url ="http://192.168.43.45:8000/api/getcentre";
+    final static String  url ="http://192.168.0.107:8000/api/getcentre";
     private int id_centre;
     private String nom_centre;
     private String adresse_centre;
     private String descriptioncentre;
     private Boolean favoris_centre;
-    private Bitmap img_centre;
-    private ArrayList<Integer> imgs_centre;
+//    private byte[] img_centre;
+    private ArrayList<byte[]> imgs_centre = new ArrayList<>();;
     private ArrayList<Salle> salles_centre;
+
+    public void setImgs_centre(ArrayList<byte[]> imgs_centre) {
+        this.imgs_centre = imgs_centre;
+    }
+
+    public ArrayList<byte[]> getImgs_centre() {
+        return imgs_centre;
+    }
 
     public int getId_centre() {
         return id_centre;
@@ -77,22 +82,16 @@ public class Centre implements Serializable {
         this.descriptioncentre = descriptioncentre;
     }
 
-    public ArrayList<Integer> getImgs_centre() {
-        return imgs_centre;
-    }
 
-    public void setImgs_centre(ArrayList<Integer> imgs_centre) {
-        this.imgs_centre = imgs_centre;
-    }
 
-    public Bitmap getImg_centre() {
-        return img_centre;
-    }
+//    public byte[] getImg_centre() {
+//        return img_centre;
+    //}
 
-    public void setImg_centre(Bitmap img_centre) {
-        this.img_centre = img_centre;
-    }
-    public Centre(int id_centre, String nom_centre, String adresse_centre, String descriptioncentre, ArrayList<Integer> imgs_centre) {
+  //  public void setImg_centre(byte[] img_centre) {
+  //      this.img_centre = img_centre;
+   // }
+    public Centre(int id_centre, String nom_centre, String adresse_centre, String descriptioncentre, ArrayList<byte[]> imgs_centre) {
         this.id_centre = id_centre;
         this.nom_centre = nom_centre;
         this.adresse_centre = adresse_centre;
@@ -100,9 +99,9 @@ public class Centre implements Serializable {
         this.imgs_centre = imgs_centre;
     }
     //pour les centres favoris:
-    public Centre(String nom_centre,Bitmap img_centre) {
+    public Centre(String nom_centre,byte[] img_centre) {
         this.nom_centre = nom_centre;
-        this.img_centre = img_centre;
+      //  this.img_centre = img_centre;
     }
     public Centre(){  }
 
@@ -116,6 +115,7 @@ public class Centre implements Serializable {
         new AsyncHttpClient().get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
                 String responseString = new String(responseBody);
                 try {
                     JSONObject jsonObject = new JSONObject(responseString);
@@ -128,12 +128,21 @@ public class Centre implements Serializable {
                         centre.setNom_centre(jsonObject1.getString("nomCentre"));
                         centre.setAdresse_centre(jsonObject1.getString("adresseCentre"));
                         centre.setDescriptioncentre(jsonObject1.getString("descriptionCentre"));
-                        String imageData = jsonObject1.getString("Imageblob");
-                        if (!imageData.equals("null")){
-                            byte[] imageBytes = Base64.decode(imageData, Base64.DEFAULT);
-                            Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-                            centre.setImg_centre(decodedImage);
+                        JSONArray Images = new JSONArray(jsonObject1.getString("images"));
+                        if (Images.length()>0){
+                            for (int j =0;j<Images.length();j++){
+                                String imageData =String.valueOf(Images.get(j));
+                                Log.d("ddd",imageData);
+                                byte[] imageBytes = Base64.decode(imageData, Base64.DEFAULT);
+                                //Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+                                centre.imgs_centre.add(imageBytes);
+
+
+                            }
+
                         }
+
+
 
                         //    centre.setImg_centre(R.drawable.img_dartaqafa);
                         centres.add(centre);

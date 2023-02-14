@@ -2,8 +2,11 @@ package Controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +39,9 @@ public class CentreController  extends RecyclerView.Adapter<CentreController.Vie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if (list_centre.get(position).getImg_centre()!=null){
-            Drawable drawable = new BitmapDrawable(context.getResources(),list_centre.get(position).getImg_centre());
+        if (list_centre.get(position).getImgs_centre().size()!=0){
+            Bitmap bitmap = BitmapFactory.decodeByteArray(list_centre.get(position).getImgs_centre().get(0), 0, list_centre.get(position).getImgs_centre().get(0).length);
+            Drawable drawable = new BitmapDrawable(context.getResources(),bitmap);
             holder.img_centre.setBackground(drawable);
         }
         else {
@@ -50,9 +54,12 @@ public class CentreController  extends RecyclerView.Adapter<CentreController.Vie
             @Override
             public void onClick(View view) {
                 Toast.makeText(context,"test test",Toast.LENGTH_LONG).show();
-                Centre centre = list_centre.get(holder.getAdapterPosition());
+                Log.d("position",String.valueOf(holder.getAdapterPosition()));
+
+                Centre centre =(Centre) list_centre.get(holder.getAdapterPosition());
+
                 Intent intent =new Intent(context, Centre_details_activity.class);
-                intent.putExtra("centre","centre");
+                intent.putExtra("centre",centre);
                 context.startActivity(intent);
             }
         });
