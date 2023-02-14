@@ -27,9 +27,8 @@ public class Centre implements Serializable {
     private String adresse_centre;
     private String descriptioncentre;
     private Boolean favoris_centre;
-//    private byte[] img_centre;
     private ArrayList<byte[]> imgs_centre = new ArrayList<>();;
-    private ArrayList<Salle> salles_centre;
+    private ArrayList<Salle> salles_centre = new ArrayList<>();
 
     public void setImgs_centre(ArrayList<byte[]> imgs_centre) {
         this.imgs_centre = imgs_centre;
@@ -82,15 +81,6 @@ public class Centre implements Serializable {
         this.descriptioncentre = descriptioncentre;
     }
 
-
-
-//    public byte[] getImg_centre() {
-//        return img_centre;
-    //}
-
-  //  public void setImg_centre(byte[] img_centre) {
-  //      this.img_centre = img_centre;
-   // }
     public Centre(int id_centre, String nom_centre, String adresse_centre, String descriptioncentre, ArrayList<byte[]> imgs_centre) {
         this.id_centre = id_centre;
         this.nom_centre = nom_centre;
@@ -141,11 +131,26 @@ public class Centre implements Serializable {
                             }
 
                         }
+                        JSONArray Salles = new JSONArray(jsonObject1.getString("salles"));
+                        for (int k =0;k<Salles.length();k++){
+                            JSONObject objectsalle = (JSONObject) Salles.get(k);
+                            Salle salle = new Salle();
+                            salle.setId_salle(Integer.valueOf(objectsalle.getString("id_Salle")));
+                            salle.setCapacite_salle(Integer.valueOf(objectsalle.getString("capacity_Salle")));
+                            salle.setDescription_salle(objectsalle.getString("description_Salle"));
+                            salle.setEtage_salle(Integer.valueOf(objectsalle.getString("etage_Salle")));
+                            salle.setNumero_salle(objectsalle.getString("numero_Salle"));
+                            salle.setDisponibilite_salle(Boolean.valueOf(objectsalle.getString("disponible_Salle")));
+                            String imagesalle = objectsalle.getString("image");
+                            byte[] imgsalle =  Base64.decode(imagesalle, Base64.DEFAULT);
+                            salle.setImage_salle(imgsalle);
+                            centre.getSalles_centre().add(salle);
+
+                        }
 
 
 
-                        //    centre.setImg_centre(R.drawable.img_dartaqafa);
-                        centres.add(centre);
+                         centres.add(centre);
                         CentreFragment.adapter1.notifyDataSetChanged();
                         dialog.dismiss();
 

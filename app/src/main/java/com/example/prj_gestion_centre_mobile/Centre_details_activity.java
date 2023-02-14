@@ -49,8 +49,8 @@ TextView txt_nomcentre,txt_adresse,txt_descreption;
                 Arrays.asList(new Salle(149,"14"),new Salle(30,"4"),
                        new Salle(230,"12"),new Salle(50,"6"),
                         new Salle(28,"45")));
-        listsalle.get(3).setImage_salle(R.drawable.img_salle2);
-        listsalle.get(0).setImage_salle(R.drawable.img_salle);
+//        listsalle.get(3).setImage_salle(R.drawable.img_salle2);
+//        listsalle.get(0).setImage_salle(R.drawable.img_salle);
         int[] imglist = {R.drawable.img_centre,R.drawable.img_centre2,R.drawable.img_centre3};
         Centre_detailsController controller = new Centre_detailsController(this,centre.getImgs_centre());
         Salle_Controller salleController = new Salle_Controller(this,listsalle);

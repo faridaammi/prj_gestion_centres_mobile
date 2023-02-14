@@ -13,7 +13,7 @@ public class Salle implements Serializable {
     private int capacite_salle;
     private String description_salle;
     private boolean disponibilite_salle;
-    private int image_salle;
+    private byte[] image_salle;
 
     public int getId_salle() {
         return id_salle;
@@ -39,7 +39,7 @@ public class Salle implements Serializable {
         return disponibilite_salle;
     }
 
-    public int getImage_salle() {
+    public byte[] getImage_salle() {
         return image_salle;
     }
 
@@ -67,11 +67,11 @@ public class Salle implements Serializable {
         this.disponibilite_salle = disponibilite_salle;
     }
 
-    public void setImage_salle(int image_salle) {
+    public void setImage_salle(byte[] image_salle) {
         this.image_salle = image_salle;
     }
 
-    public Salle(int id_salle, String numero_salle, int etage_salle, int capacite_salle, String description_salle, boolean disponibilite_salle, int image_salle) {
+    public Salle(int id_salle, String numero_salle, int etage_salle, int capacite_salle, String description_salle, boolean disponibilite_salle, byte[] image_salle) {
         this.id_salle = id_salle;
         this.numero_salle = numero_salle;
         this.etage_salle = etage_salle;
@@ -84,7 +84,6 @@ public class Salle implements Serializable {
     public  Salle(int capacite , String numero_salle){
         this.capacite_salle= capacite;
         this.numero_salle= numero_salle;
-        this.image_salle = 0;
 
     }
 

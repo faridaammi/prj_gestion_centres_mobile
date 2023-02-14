@@ -41,15 +41,18 @@ public class Centre_detailsController  extends RecyclerView.Adapter<Centre_detai
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if (img_centre.size()!=0){
+        if (!img_centre.isEmpty()){
+            Log.d("teste","nchof wach dkhel lhna ila makantch khawya ");
+
             Bitmap bitmap = BitmapFactory.decodeByteArray(img_centre.get(position), 0, img_centre.get(position).length);
             holder.imgcentre.setImageBitmap(bitmap);
         }
         else {
-            holder.imgcentre.setBackground(context.getResources().getDrawable(R.drawable.defaultimg));
+            Log.d("teste","nchof wach dkhel lhna ");
+            holder.imgcentre.setImageResource(R.drawable.defaultimg);
+
 
         }
-      //  holder.imgcentre.setImageResource(img_centre[position]);
 
     }
 
@@ -57,7 +60,12 @@ public class Centre_detailsController  extends RecyclerView.Adapter<Centre_detai
 
     @Override
     public int getItemCount() {
-        return img_centre.size();
+        if (img_centre.size()==0){
+            return 1;
+        }
+        else {        return img_centre.size();
+        }
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
