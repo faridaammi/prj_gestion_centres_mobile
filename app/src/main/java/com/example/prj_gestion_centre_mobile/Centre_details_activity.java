@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,12 +26,20 @@ import Model.Utilisateur;
 public class Centre_details_activity extends AppCompatActivity {
 public static ArrayList<Utilisateur> list;
 Centre centre;
-
+TextView txt_nomcentre,txt_adresse,txt_descreption;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String cmnt= "Centre très agréable et confortable, merci d'avoir accompagné mon exposant";
         setContentView(R.layout.activity_centre_details);
+        Intent intent = getIntent();
+        txt_nomcentre= (TextView) findViewById(R.id.txtnom_centre);
+        txt_adresse= (TextView) findViewById(R.id.txt_adresse);
+        txt_descreption= (TextView) findViewById(R.id.txt_description);
+        centre =(Centre) intent.getSerializableExtra("centre");
+        txt_adresse.setText(centre.getAdresse_centre());
+        txt_descreption.setText(centre.getDescriptioncentre());
+        txt_nomcentre.setText(centre.getNom_centre());
+        String cmnt= "Centre très agréable et confortable, merci d'avoir accompagné mon exposant";
         list= new ArrayList<>(Arrays.asList(new Utilisateur(1,"Hakim ELHAIBA",R.drawable.icon_profile),
                 new Utilisateur(2,"Doon Kaiji",R.drawable.icon_profile2),new Utilisateur(3,"GUITAR TIZ ASSO",R.drawable.icon_profile)));
        //  centre =new Centre("CEFT IBN ZOHR-TIZNIT",R.drawable.img_centre);
@@ -43,7 +52,7 @@ Centre centre;
         listsalle.get(3).setImage_salle(R.drawable.img_salle2);
         listsalle.get(0).setImage_salle(R.drawable.img_salle);
         int[] imglist = {R.drawable.img_centre,R.drawable.img_centre2,R.drawable.img_centre3};
-        Centre_detailsController controller = new Centre_detailsController(this,imglist);
+        Centre_detailsController controller = new Centre_detailsController(this,centre.getImgs_centre());
         Salle_Controller salleController = new Salle_Controller(this,listsalle);
         Commentaire_Controller cmntcontroller = new Commentaire_Controller(this,listcmnts);
         RecyclerView recyclerView= findViewById(R.id.recycleview);
