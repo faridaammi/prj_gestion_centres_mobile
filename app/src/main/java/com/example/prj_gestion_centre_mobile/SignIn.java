@@ -30,6 +30,7 @@ import cz.msebera.android.httpclient.Header;
 public class SignIn extends AppCompatActivity {
     final String url_login ="http://192.168.0.107:8000/api/login";
     public static String nom_organisme;
+    public static  int id_organisme;
     Button btn_identifier;
     EditText txt_password,txt_email;
     TextView txt_Sinscrire;
@@ -116,6 +117,7 @@ public class SignIn extends AppCompatActivity {
                         if (object.getString("message").equals("Kayn had luser")){
                             JSONObject user = new JSONObject(object.getString("Utilisateur"));
                             nom_organisme=user.getString("nom_Organisme");
+                            id_organisme = Integer.valueOf(user.getString("id_Organisme"));
                             Intent intent = new Intent(SignIn.this,AccueilActivity.class);
                             intent.putExtra("ID_organisme",user.getString("id_Organisme"));
                             startActivity(intent);
