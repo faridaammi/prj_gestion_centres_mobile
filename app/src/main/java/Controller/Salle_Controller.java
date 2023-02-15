@@ -27,7 +27,7 @@ import Model.Salle;
 public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.ViewHolder>{
     private Context context;
     ArrayList<Salle> list_salle;
-    ArrayList<Salle> select_item_salle=new ArrayList<>();
+   public static ArrayList<Salle> select_item_salle=new ArrayList<>();
     public Salle_Controller(Context context, ArrayList<Salle> salles) {
         this.context = context;
         this.list_salle = salles;
