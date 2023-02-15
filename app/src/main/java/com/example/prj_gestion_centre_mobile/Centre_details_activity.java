@@ -53,7 +53,7 @@ TextView txt_nomcentre,txt_adresse,txt_descreption;
 //        listsalle.get(0).setImage_salle(R.drawable.img_salle);
         int[] imglist = {R.drawable.img_centre,R.drawable.img_centre2,R.drawable.img_centre3};
         Centre_detailsController controller = new Centre_detailsController(this,centre.getImgs_centre());
-        Salle_Controller salleController = new Salle_Controller(this,listsalle);
+        Salle_Controller salleController = new Salle_Controller(this,centre.getSalles_centre());
         Commentaire_Controller cmntcontroller = new Commentaire_Controller(this,listcmnts);
         RecyclerView recyclerView= findViewById(R.id.recycleview);
         RecyclerView recyclerViewcmnt= findViewById(R.id.recycleviewcmnts);
@@ -67,7 +67,6 @@ TextView txt_nomcentre,txt_adresse,txt_descreption;
         recyclerView1.setAdapter(salleController);
         recyclerViewcmnt.setLayoutManager(layoutManager2);
         recyclerViewcmnt.setAdapter(cmntcontroller);
-        centre.setSalles_centre(listsalle);
 
     }
 

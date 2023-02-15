@@ -2,7 +2,10 @@ package Controller;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +44,15 @@ public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.Vie
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtcapacite.setText(list_salle.get(position).getCapacite_salle()+" Personnes");
         holder.txtnum.setText(list_salle.get(position).getNumero_salle());
+        if (list_salle.get(position).getImage_salle().length!=0){
+            Bitmap bitmap = BitmapFactory.decodeByteArray(list_salle.get(position).getImage_salle(), 0, list_salle.get(position).getImage_salle().length);
+            Drawable drawable = new BitmapDrawable(context.getResources(),bitmap);
+            holder.imgsalle.setBackground(drawable);
+        }
+        else {
+            holder.imgsalle.setBackground(context.getResources().getDrawable(R.drawable.rectangleorange));
+
+        }
       //  int img = list_salle.get(position).getImage_salle()==0? R.drawable.rectangleorange:list_salle.get(position).getImage_salle();
 
        // holder.imgsalle.setBackground(context.getDrawable(img));
@@ -73,13 +85,16 @@ public class Salle_Controller  extends RecyclerView.Adapter<Salle_Controller.Vie
             cardView_salle.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(select_item_salle.contains(list_salle.get(getAdapterPosition()))){
-                        itemView.setBackgroundColor(Color.TRANSPARENT);
-                        select_item_salle.remove(list_salle.get(getAdapterPosition()));
-                    }else{
-                        itemView.setBackgroundResource(R.drawable.btn_background3);
-                        select_item_salle.add(list_salle.get(getAdapterPosition()));
+                    if (!context.getClass().getSimpleName().equals("Centre_details_activity")){
+                        if(select_item_salle.contains(list_salle.get(getAdapterPosition()))){
+                            itemView.setBackgroundColor(Color.TRANSPARENT);
+                            select_item_salle.remove(list_salle.get(getAdapterPosition()));
+                        }else{
+                            itemView.setBackgroundResource(R.drawable.btn_background3);
+                            select_item_salle.add(list_salle.get(getAdapterPosition()));
+                        }
                     }
+
                 }
             });
         }
